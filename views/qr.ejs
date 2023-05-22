@@ -5,16 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <header>
-      <img src="/images/logo2.png" alt="">
-      <div>
-        <h1>Biblioteca</h1>
-        <h1>Login</h1>
-        <h1>Registrarse</h1>
-      </div>
-    </header>
+    <%- include('partials/navegacion') %>
     <section id="principal">
-      <div></div>
+      <div class="div-qr">
+        <h1 class="">Selecciona el tipo de codigo QR que quieres generar!</h1>
+        <%- include('partials/botones') %>
+
     </section>
   </body>
 </html>

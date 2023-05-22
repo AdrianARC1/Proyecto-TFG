@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleQRtexto.css">
+    <%- include('../partials/links') %>
+    <title>QR Arc</title>
+  </head>
+  <body>
+    <%- include('../partials/navegacion') %>
+    <section id="principal">
+    <h1>Codigo QR para textos.</h1>
+    <form action="/generate-qr/texto" method="post">
+      <label for="data">URL o texto:</label>
+       <input type="text" name="data" id="data" required>
+
+       <div class="divopciones opcionBody">
+        <select name="opcionBody">
+          <option value="square" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png')">Square</option>
+          <option value="mosaic">Opción 2</option>
+          <option value="dot">Opción 3</option>
+          <option value="circle">Opción 1</option>
+          <option value="circle-zebra">Opción 2</option>
+          <option value="circle-zebra-vertical">Opción 3</option>
+          <option value="circular">Opción 1</option>
+          <option value="edge-cut">Opción 2</option>
+          <option value="edge-cut-smooth">Opción 3</option>
+          <option value="japnese">Opción 1</option>
+          <option value="leaf">Opción 2</option>
+          <option value="pointed">Opción 3</option>
+          <option value="pointed-edge-cut">Opción 2</option>
+          <option value="pointed-in">Opción 3</option>
+          <option value="pointed-in-smooth">Opción 2</option>
+          <option value="pointed-smooth">Opción 3</option>
+          <option value="round">Opción 2</option>
+          <option value="rounded-in">Opción 2</option>
+          <option value="rounded-in-smooth">Opción 2</option>
+          <option value="rounded-pointed">Opción 2</option>
+          <option value="star">Opción 2</option>
+          <option value="diamond">Opción 2</option>
+        </select>
+       </div>
+      <div class="divopciones opcionEye">
+        <select id="opcionEye">
+          <option value="frame0">Frame 0</option>
+          <option value="frame1">Frame 1</option>
+          <option value="frame2">Frame 2</option>
+          <option value="frame3">Frame 3</option>
+          <option value="frame4">Frame 4</option>
+          <option value="frame5">Frame 5</option>
+          <option value="frame6">Frame 6</option>
+          <option value="frame7">Frame 7</option>
+          <option value="frame8">Frame 8</option>
+          <option value="frame9">Frame 9</option>
+          <option value="frame10">Frame 8</option>
+          <option value="frame11">Frame 9</option>
+          <option value="frame12">Frame 8</option>
+          <option value="frame13">Frame 9</option>
+          <option value="frame14">Frame 9</option>
+          <option value="frame15">Frame 9</option>
+          <option value="frame16">Frame 9</option>
+        </select>
+      </div>
+
+      <div class="divopciones opcionEyeBall">
+        <select id="opcionEyeBall">
+          <option value="ball0">Ball 0</option>
+          <option value="ball1">ball 1</option>
+          <option value="ball2">ball 2</option>
+          <option value="ball3">ball 3</option>
+          <option value="ball4">ball 4</option>
+          <option value="ball5">ball 5</option>
+          <option value="ball6">ball 6</option>
+          <option value="ball7">ball 7</option>
+          <option value="ball8">ball 8</option>
+          <option value="ball9">ball 9</option>
+          <option value="ball10">ball 8</option>
+          <option value="ball11">ball 9</option>
+          <option value="ball12">ball 8</option>
+          <option value="ball13">ball 9</option>
+          <option value="ball14">ball 9</option>
+          <option value="ball15">ball 9</option>
+          <option value="ball16">ball 9</option>
+          <option value="ball17">ball 9</option>
+          <option value="ball18">ball 9</option>
+          <option value="ball19">ball 9</option>
+        </select>
+      </div>
+       <label for="bgColor">Color de fondo:</label>
+       <input type="color" name="bgColor" id="bgColor" value="#FFFFFF">
+
+       <label for="bodyColor">Color del cuerpo:</label>
+       <input type="color" name="bodyColor" id="bodyColor" value="#000000">
+
+       <label for="logoUrl">URL del logotipo:</label>
+       <input type="url" name="logoUrl" id="logoUrl">
+
+    <button type="submit">Generar código QR</button>
+     </form>
+    </section>
+  </body>
+</html>
+

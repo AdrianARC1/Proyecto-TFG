@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/links') %>
     <title>QR Arc</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <header>
-      <img src="/images/logo2.png" alt="">
-      <div>
-        <h1>Biblioteca</h1>
-        <h1>Ayuda</h1>
-      </div>
-      <div>
-        
-        <h1>Login</h1>
-        <h1>Registrarse</h1>
-      </div>
-    </header>
+    <%- include('partials/navegacion') %>
     <section id="principal">
-      <div id="frases">
-        <h1>Genera de manera<br> sencilla códigos QR.</h1>
-        <p>Convierte tu información en un código QR en un abrir y cerrar de ojos. <br>¡Haz que tus mensajes lleguen directo al objetivo!</p>
-        <div>
-          <button class="standard">Standard QR</button>
-          <button class="custom">Custom QR</button>
+      <div id="ejemplos-normales">
+        <h1>Codigos QR normales hechos:
+          <img src="/images/logo.png" alt="">
+        </h1>
+      </div>
+      <div class="info-bots">
+        <div id="frases">
+          <h1>Genera de manera<br> sencilla códigos QR.</h1>
+          <p>Convierte tu información en un código QR en un abrir y cerrar de ojos. <br>¡Haz que tus mensajes lleguen directo al objetivo!</p>
+          <div>
+            <a href="generate-qr"><button class="custom">Crear Code QR</button></a>
+          </div>
         </div>
+        <%- include('partials/botones') %>
       </div>
 
     </section>
   </body>
 </html>
+

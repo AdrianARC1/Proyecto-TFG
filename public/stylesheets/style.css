@@ -2,12 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   height: 100px;
+  display: flex;
+  justify-content: center;
 }
 header div {
   display: flex;
@@ -25,67 +29,79 @@ header img {
 }
 
 #principal {
-  height: 100vh;
-  background: url("/images/blob-scene-haikei.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  height: 200vh;
+  background-repeat: repeat;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
-#principal #frases {
-  height: 40vh;
-  width: 70%;
+#principal .info-bots #frases {
+  margin-top: 50px;
+  height: auto;
+  width: 60%;
   border: 1px solid;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 100px 0 100px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-#principal #frases h1 {
+#principal .info-bots #frases h1 {
   font-size: 60px;
-  margin-top: 50px;
   color: #3498db;
 }
-#principal #frases p {
+#principal .info-bots #frases p {
   font-size: 30px;
   color: #555555;
   line-height: 1.5;
   text-align: center;
 }
-#principal #frases .standard, #principal #frases .custom {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: grey;
+#principal .info-bots #frases .custom {
+  font-family: Bebas Neue, sans-serif;
+  color: #fff;
+  background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+  padding: 20px 50px;
   border: none;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  padding: 10px;
-  width: 150px;
-  transition: background-color 0.3s ease-in-out;
-  cursor: pointer;
-  margin: 5px;
+  box-shadow: rgb(0, 0, 0) 0 0 0 0;
+  border-radius: 50px;
+  transition: 1s;
+  margin-top: 40px;
 }
-#principal #frases .standard:hover, #principal #frases .custom:hover {
-  background-color: #2980b9;
-}
-#principal #frases .standard:active, #principal #frases .custom:active {
-  transform: scale(0.95);
-}
-#principal #frases .custom {
-  background-color: transparent;
-  color: #3498db;
-  border: 2px solid #3498db;
-}
-#principal #frases .custom:hover {
+#principal .info-bots #frases .custom:hover {
   background-color: #f2f2f2;
 }
-#principal #frases .custom:active {
+#principal .info-bots #frases .custom:active {
   transform: scale(0.95);
+  transition: 0.4s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#principal #opciones {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+#principal #opciones a button {
+  width: 300px;
+  height: 70px;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid;
+}
+#principal #opciones a button:hover {
+  background: #3498db;
+  border-bottom-color: #0a3755;
+  border-bottom-width: 5px;
+}
+#principal .div-qr {
+  width: 50%;
+}
+#principal .div-qr h1 {
+  text-align: center;
+  font-size: 40px;
 }/*# sourceMappingURL=style.css.map */
