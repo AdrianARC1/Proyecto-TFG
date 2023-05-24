@@ -34,6 +34,7 @@ body
         padding: 60px
         background: white
         position: sticky
+        z-index: 1
         top: 0px
         width: 70%
         display: flex
@@ -127,6 +128,20 @@ body
                 display: flex
                 flex-wrap: wrap
                 padding: 20px
+                .div-reducido
+                    max-height: 200px
+                    overflow: hidden
+                    position: relative
+                    padding-top: 80px
+                    transition: 4s ease
+                    #botonFlotante
+                        position: absolute
+                        top: 0px
+                        margin: auto
+                        padding: 30px
+                .div-expandido
+                    max-height: 600px
+                    
                 .forma-cuerpo
                     display: flex
                     justify-content: center
@@ -135,10 +150,10 @@ body
                     .opcion-label
                         display: inline-block
                         cursor: pointer
-                        padding: 20px
+                        margin: 20px
                         img
                             width: 80px
-                            border: 2px solid blue
+                            // border: 2px solid blue
                             padding: 8px
                             transition: border-color 0.3s
 
@@ -146,7 +161,14 @@ body
                             position: absolute
                             opacity: 0
                             pointer-events: none
-
+                            &:checked
+                                transform: scale(2)
+                                opacity: 1
+                                z-index: 0
+                            &:checked + #imagen1
+                                transform: scale(2)
+                                opacity: 1
+                                z-index: 0
             .divopciones
                 display: inline-block
                 vertical-align: top

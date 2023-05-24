@@ -40,6 +40,7 @@ body {
   padding: 60px;
   background: white;
   position: sticky;
+  z-index: 1;
   top: 0px;
   width: 70%;
   display: flex;
@@ -148,6 +149,22 @@ body {
   flex-wrap: wrap;
   padding: 20px;
 }
+#principal-texto form .todas-opciones .opcionBody .div-reducido, #principal-texto form .logo-qr .opcionBody .div-reducido, #principal-texto form .colores-qr .opcionBody .div-reducido, #principal-texto form .size .opcionBody .div-reducido {
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 80px;
+  transition: 4s ease;
+}
+#principal-texto form .todas-opciones .opcionBody .div-reducido #botonFlotante, #principal-texto form .logo-qr .opcionBody .div-reducido #botonFlotante, #principal-texto form .colores-qr .opcionBody .div-reducido #botonFlotante, #principal-texto form .size .opcionBody .div-reducido #botonFlotante {
+  position: absolute;
+  top: 0px;
+  margin: auto;
+  padding: 30px;
+}
+#principal-texto form .todas-opciones .opcionBody .div-expandido, #principal-texto form .logo-qr .opcionBody .div-expandido, #principal-texto form .colores-qr .opcionBody .div-expandido, #principal-texto form .size .opcionBody .div-expandido {
+  max-height: 600px;
+}
 #principal-texto form .todas-opciones .opcionBody .forma-cuerpo, #principal-texto form .logo-qr .opcionBody .forma-cuerpo, #principal-texto form .colores-qr .opcionBody .forma-cuerpo, #principal-texto form .size .opcionBody .forma-cuerpo {
   display: flex;
   justify-content: center;
@@ -157,11 +174,10 @@ body {
 #principal-texto form .todas-opciones .opcionBody .forma-cuerpo .opcion-label, #principal-texto form .logo-qr .opcionBody .forma-cuerpo .opcion-label, #principal-texto form .colores-qr .opcionBody .forma-cuerpo .opcion-label, #principal-texto form .size .opcionBody .forma-cuerpo .opcion-label {
   display: inline-block;
   cursor: pointer;
-  padding: 20px;
+  margin: 20px;
 }
 #principal-texto form .todas-opciones .opcionBody .forma-cuerpo .opcion-label img, #principal-texto form .logo-qr .opcionBody .forma-cuerpo .opcion-label img, #principal-texto form .colores-qr .opcionBody .forma-cuerpo .opcion-label img, #principal-texto form .size .opcionBody .forma-cuerpo .opcion-label img {
   width: 80px;
-  border: 2px solid blue;
   padding: 8px;
   transition: border-color 0.3s;
 }
@@ -169,6 +185,16 @@ body {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+}
+#principal-texto form .todas-opciones .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked, #principal-texto form .logo-qr .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked, #principal-texto form .colores-qr .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked, #principal-texto form .size .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked {
+  transform: scale(2);
+  opacity: 1;
+  z-index: 0;
+}
+#principal-texto form .todas-opciones .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked + #imagen1, #principal-texto form .logo-qr .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked + #imagen1, #principal-texto form .colores-qr .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked + #imagen1, #principal-texto form .size .opcionBody .forma-cuerpo .opcion-label input[type=radio]:checked + #imagen1 {
+  transform: scale(2);
+  opacity: 1;
+  z-index: 0;
 }
 #principal-texto form .todas-opciones .divopciones, #principal-texto form .logo-qr .divopciones, #principal-texto form .colores-qr .divopciones, #principal-texto form .size .divopciones {
   display: inline-block;

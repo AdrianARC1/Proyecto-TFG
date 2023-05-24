@@ -35,7 +35,7 @@ router.post('/generate-qr/url', function(req, res, next) {
 });
 
 router.get('/generate-qr/texto', function(req, res, next) {
-  res.render('pags-botones/texto');
+  res.render('pags-botones/texto', {tipoQR: 'texto'});
 });
 router.post('/generate-qr/texto', async (req, res) => {
   const { data, opcionBody, bgColor, bodyColor, logoUrl } = req.body;
