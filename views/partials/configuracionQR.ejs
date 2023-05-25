@@ -107,87 +107,39 @@
         <button type="button" id="botonFlotante">Ver más opciones</button>
 
       </div>
-
-
-      <!-- <select name="opcionBody" size="22">
-        <option value="square"">1</option>
-        <option value="mosaic">2</option>
-        <option value="dot">3</option>
-        <option value="circle">4</option>
-        <option value="circle-zebra">5</option>
-        <option value="circle-zebra-vertical">6</option>
-        <option value="circular">7</option>
-        <option value="edge-cut">8</option>
-        <option value="edge-cut-smooth">9</option>
-        <option value="japnese">10</option>
-        <option value="leaf">11</option>
-        <option value="pointed">12</option>
-        <option value="pointed-edge-cut">13</option>
-        <option value="pointed-in">14</option>
-        <option value="pointed-in-smooth">15</option>
-        <option value="pointed-smooth">16</option>
-        <option value="round">17</option>
-        <option value="rounded-in">18</option>
-        <option value="rounded-in-smooth">19</option>
-        <option value="rounded-pointed">20</option>
-        <option value="star">21</option>
-        <option value="diamond">22</option>
-      </select> -->
      </div>
+
     <div class="divopciones opcionEye">
       <h2>Forma del ojo</h2>
-      <select size="17" id="opcionEye">
-        <option value="frame0">Frame 0</option>
-        <option value="frame1">Frame 1</option>
-        <option value="frame2">Frame 2</option>
-        <option value="frame3">Frame 3</option>
-        <option value="frame4">Frame 4</option>
-        <option value="frame5">Frame 5</option>
-        <option value="frame6">Frame 6</option>
-        <option value="frame7">Frame 7</option>
-        <option value="frame8">Frame 8</option>
-        <option value="frame9">Frame 9</option>
-        <option value="frame10">Frame 8</option>
-        <option value="frame11">Frame 9</option>
-        <option value="frame12">Frame 8</option>
-        <option value="frame13">Frame 9</option>
-        <option value="frame14">Frame 9</option>
-        <option value="frame15">Frame 9</option>
-        <option value="frame16">Frame 9</option>
-      </select>
+      <div class="forma-eye div-reducido" id="divPrueba2">
+        <% for (let i = 0; i < 17; i++) { %>
+          <label for="opcionEye<%= i+1 %>" class="opcion-label">
+            <img src="https://www.qrcode-monkey.com/img/qr/eye-frames/frame<%= i %>.png" alt="Opción <%= i+1 %>" id="imagen<%= i+1 %>">
+            <input type="radio" name="opcionEye" id="opcionEye<%= i+1 %>" value="frame<%= i %>">
+          </label>
+        <% } %>
+      <button type="button" id="botonFlotante2">Ver más opciones</button>
+      </div>
     </div>
-
     <div class="divopciones opcionEyeBall">
       <h2>Forma de la bola del ojo</h2>
-      <select id="opcionEyeBall" size="20">
-        <option value="ball0">Ball 0</option>
-        <option value="ball1">ball 1</option>
-        <option value="ball2">ball 2</option>
-        <option value="ball3">ball 3</option>
-        <option value="ball4">ball 4</option>
-        <option value="ball5">ball 5</option>
-        <option value="ball6">ball 6</option>
-        <option value="ball7">ball 7</option>
-        <option value="ball8">ball 8</option>
-        <option value="ball9">ball 9</option>
-        <option value="ball10">ball 8</option>
-        <option value="ball11">ball 9</option>
-        <option value="ball12">ball 8</option>
-        <option value="ball13">ball 9</option>
-        <option value="ball14">ball 9</option>
-        <option value="ball15">ball 9</option>
-        <option value="ball16">ball 9</option>
-        <option value="ball17">ball 9</option>
-        <option value="ball18">ball 9</option>
-        <option value="ball19">ball 9</option>
-      </select>
+      <div class="forma-eyeBall div-reducido" id="divPrueba3">
+        <% for (let i = 0; i < 17; i++) { %>
+          <label for="opcionEyeBall<%= i+1 %>" class="opcion-label">
+            <img src="https://www.qrcode-monkey.com/img/qr/eye-balls/ball<%= i %>.png" alt="Opción <%= i+1 %>" id="imagen<%= i+1 %>">
+            <input type="radio" name="opcionEyeBall" id="opcionEyeBall<%= i+1 %>" value="ball<%= i %>">
+          </label>
+        <% } %>
+        <button type="button" id="botonFlotante3">Ver más opciones</button>
+
     </div>
    </div>
+
    <div class="colores-qr divopciones" id="div-colores">
     <h2>Colores</h2>
       <div class="div-colores">
         <label for="bgColor">Color de fondo:</label>
-    <input type="color" name="bgColor" id="bgColor" value="#FFFFFF">
+    <input type="color" name="bgColor" id="bgColor" value="#FFFFFF"  data-picker="WKCP">
 
     <label for="bodyColor">Color del cuerpo:</label>
     <input type="color" name="bodyColor" id="bodyColor" value="#000000">

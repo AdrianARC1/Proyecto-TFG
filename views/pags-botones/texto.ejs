@@ -17,19 +17,30 @@
     
     
     </section>
+    
     <script>
         const div = document.getElementById('divPrueba');
+        const div2 = document.getElementById('divPrueba2');
+        const div3 = document.getElementById('divPrueba3');
         const boton = document.getElementById('botonFlotante');
+        const boton2 = document.getElementById('botonFlotante2');
+        const boton3 = document.getElementById('botonFlotante3');
 
         boton.addEventListener('click', function() {
         div.classList.toggle('div-expandido');
-      });
+        });
+        boton2.addEventListener('click', function() {
+        div2.classList.toggle('div-expandido');
+        });
+        boton3.addEventListener('click', function() {
+        div3.classList.toggle('div-expandido');
+        });
       
 
       function actuValor() {
-      const inpRange = document.getElementById("inpRange");
-      const valorRango = document.getElementById("valorRango");
-      valorRango.textContent = inpRange.value+"px";
+        const inpRange = document.getElementById("inpRange");
+        const valorRango = document.getElementById("valorRango");
+        valorRango.textContent = inpRange.value+"px";
     }
 
     actuValor();
