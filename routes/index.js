@@ -39,7 +39,8 @@ router.get('/generate-qr/texto', function(req, res, next) {
 });
 router.post('/generate-qr/texto', async (req, res) => {
   const { data, opcionBody, opcionEye, opcionEyeBall, bgColor, bodyColor, logoUrl } = req.body;
-  console.log(req.body);
+  // console.log(req.body);
+  console.log(req.query.svg);
   const qrConfig = {
     data,
     config: {
@@ -64,10 +65,11 @@ router.post('/generate-qr/texto', async (req, res) => {
 
   try {
     const response = await apiClient.post('/qr/custom', qrConfig);
-    res.render('qrcustom', { imageUrl: response.data.imageUrl });
+    imageUrl = response.data.imageUrl
+    res.render('qrcustom', { imageUrl});
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).send('Error al generar el código QR');
+    res.render('error', {error});
   }
 });
 
@@ -91,5 +93,8 @@ router.get('/generate-qr/correo-electronico', function(req, res, next) {
   res.render('pags-botones/correo-electronico');
 });
 
-
+router.get('/descargar-qr', (req, res) => {
+  res.setHeader('Content-Disposition', 'attachment; filename="nombre-del-archivo.png"');
+  res.download('/ruta-del-archivo.png');
+});
 module.exports = router;

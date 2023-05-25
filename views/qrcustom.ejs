@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <img src="<%= imageUrl %>" alt="Código QR">
+    <%- include('partials/links') %>
+    <title>QR Arc</title>
+  </head>
+  <body>
+    <%- include('partials/navegacion') %>
+    <section id="principal-qr">
+        <div id="textos">
+            <h1>¡Gracias por utilizar nuestro servicio para generar tu código QR personalizado! </h1>
+            <p>Esperamos que hayas tenido una experiencia satisfactoria. Si necesitas generar más códigos QR en el futuro o tienes alguna otra necesidad relacionada con la generación de códigos, ¡estaremos encantados de ayudarte nuevamente! Tu satisfacción es nuestra prioridad, y estamos comprometidos a brindarte un servicio rápido, confiable y de alta calidad.</p>
+        </div>
+        <img src="<%= imageUrl %>" alt="Código QR">
+        <a href="/descargar-qr">
+            <button>Descargar imagen</button>
+        </a>
+        <script>
+        function descargarImagen(imagenUrl) {
+    // Crear un elemento de enlace temporal
+    var link = document.createElement("a");
+    link.href = imagenUrl;
+    link.download = "nombre-del-archivo.png"; // Nombre del archivo descargado
+
+    // Simular un clic en el enlace para iniciar la descarga
+    link.click();
+  }
+      </script>
 </body>
 </html>

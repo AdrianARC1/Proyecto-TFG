@@ -160,4 +160,33 @@ header a img {
 #principal .div-qr h1 {
   text-align: center;
   font-size: 40px;
+}
+
+footer {
+  background: #2c2c2c;
+  padding-bottom: 40px;
+  color: #f2f2f2;
+}
+footer p {
+  text-align: center;
+  margin-top: 40px;
+}
+footer #imagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #imagen img {
+  width: 200px;
+}
+footer #links-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #links-footer div {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
 }/*# sourceMappingURL=style.css.map */
