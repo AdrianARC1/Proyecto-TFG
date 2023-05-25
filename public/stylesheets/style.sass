@@ -92,20 +92,48 @@ header
         align-items: center
         gap: 30px
         justify-content: center
-        a
-            button
-                width: 300px
-                height: 70px
-                padding: 20px
-                border-top-right-radius: 10px
-                border-top-left-radius: 10px
-                border: 1px solid
-                background-color: #ffffff
-                transition: .4s ease
-                &:hover
-                    background: #3498db
-                    border-bottom-color: #0a3755
-                    border-bottom-width: 5px
+        .botones-info
+            position: relative
+            .popup-prueba
+                position: absolute
+                top: 100%
+                left: 0
+                background-color: #fff
+                padding: 10px
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+                display: none
+                
+            a
+                button
+                    width: 300px
+                    height: 70px
+                    padding: 20px
+                    border-top-right-radius: 10px
+                    border-top-left-radius: 10px
+                    border: 1px solid
+                    background-color: #ffffff
+                    transition: .4s ease
+                    font-size: 16px
+                    text-align: left
+                    font-weight: bold
+
+                    &:hover
+                        background: #3498db38
+                        border-bottom-color: #0a3755
+                        border-bottom-width: 5px
+                    i
+                        margin-right: 20px
+                        font-size: 20px
+                        color: #3498db
+            .fa-circle-question
+                float: right
+                color: red
+                position: absolute
+                right: 40px
+                top: 25px
+                font-size: 20px
+                &:hover + .popup-prueba
+                    display: block
     .div-qr
         width: 70%
         background: white

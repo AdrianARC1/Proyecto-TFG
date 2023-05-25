@@ -99,7 +99,19 @@ header a img {
   gap: 30px;
   justify-content: center;
 }
-#principal #opciones a button {
+#principal #opciones .botones-info {
+  position: relative;
+}
+#principal #opciones .botones-info .popup-prueba {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+#principal #opciones .botones-info a button {
   width: 300px;
   height: 70px;
   padding: 20px;
@@ -108,11 +120,30 @@ header a img {
   border: 1px solid;
   background-color: #ffffff;
   transition: 0.4s ease;
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
 }
-#principal #opciones a button:hover {
-  background: #3498db;
+#principal #opciones .botones-info a button:hover {
+  background: rgba(52, 152, 219, 0.2196078431);
   border-bottom-color: #0a3755;
   border-bottom-width: 5px;
+}
+#principal #opciones .botones-info a button i {
+  margin-right: 20px;
+  font-size: 20px;
+  color: #3498db;
+}
+#principal #opciones .botones-info .fa-circle-question {
+  float: right;
+  color: red;
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  font-size: 20px;
+}
+#principal #opciones .botones-info .fa-circle-question:hover + .popup-prueba {
+  display: block;
 }
 #principal .div-qr {
   width: 70%;
