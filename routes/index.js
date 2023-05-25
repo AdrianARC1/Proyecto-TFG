@@ -38,14 +38,14 @@ router.get('/generate-qr/texto', function(req, res, next) {
   res.render('pags-botones/texto', {tipoQR: 'texto'});
 });
 router.post('/generate-qr/texto', async (req, res) => {
-  const { data, opcionBody, bgColor, bodyColor, logoUrl } = req.body;
-  console.log(req.body.opcionBody);
+  const { data, opcionBody, opcionEye, opcionEyeBall, bgColor, bodyColor, logoUrl } = req.body;
+  console.log(req.body);
   const qrConfig = {
     data,
     config: {
       body: opcionBody,
-      eye: "frame12",
-      eyeBall: "ball0",
+      eye: opcionEye,
+      eyeBall: opcionEyeBall,
       bodyColor,
       bgColor,
       eye1Color: bodyColor,
