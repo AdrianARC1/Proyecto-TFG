@@ -9,6 +9,9 @@ $color-secundario-hover: #f2f2f2
     text-decoration: none
     font-family: 'Roboto', sans-serif
 
+button
+    cursor: pointer
+
 header
     display: flex
     justify-content: space-between
@@ -94,14 +97,16 @@ header
         justify-content: center
         .botones-info
             position: relative
+            transition: 1s
             .popup-prueba
                 position: absolute
                 top: 100%
                 left: 0
                 background-color: #fff
                 padding: 10px
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
-                display: none
+                box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3)
+                opacity: 0
+                transition: opacity .5s ease
                 
             a
                 button
@@ -124,7 +129,7 @@ header
                     i
                         margin-right: 20px
                         font-size: 20px
-                        color: #3498db
+                        color: black
             .fa-circle-question
                 float: right
                 color: red
@@ -133,7 +138,8 @@ header
                 top: 25px
                 font-size: 20px
                 &:hover + .popup-prueba
-                    display: block
+                    opacity: 1
+                    z-index: 1
     .div-qr
         width: 70%
         background: white

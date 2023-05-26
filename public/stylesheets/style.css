@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -101,6 +105,7 @@ header a img {
 }
 #principal #opciones .botones-info {
   position: relative;
+  transition: 1s;
 }
 #principal #opciones .botones-info .popup-prueba {
   position: absolute;
@@ -108,8 +113,9 @@ header a img {
   left: 0;
   background-color: #fff;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  display: none;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 #principal #opciones .botones-info a button {
   width: 300px;
@@ -132,7 +138,7 @@ header a img {
 #principal #opciones .botones-info a button i {
   margin-right: 20px;
   font-size: 20px;
-  color: #3498db;
+  color: black;
 }
 #principal #opciones .botones-info .fa-circle-question {
   float: right;
@@ -143,7 +149,8 @@ header a img {
   font-size: 20px;
 }
 #principal #opciones .botones-info .fa-circle-question:hover + .popup-prueba {
-  display: block;
+  opacity: 1;
+  z-index: 1;
 }
 #principal .div-qr {
   width: 70%;
