@@ -15,18 +15,23 @@ header {
   justify-content: space-between;
   height: 100px;
   background: #3498db;
+  color: white;
   display: flex;
   justify-content: center;
 }
-header div {
+header #links-header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 40%;
+  width: 80%;
 }
-header div h1 {
+header #links-header div {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
   margin-left: 50px;
   margin-right: 50px;
+  font-size: 12px;
 }
 header a img {
   width: 170px;
@@ -34,14 +39,44 @@ header a img {
 }
 
 #principal {
-  height: 200vh;
+  height: auto;
+  padding-bottom: 200px;
   background-repeat: repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: #3498db;
 }
+#principal #ejemplos-codigosqr {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 70%;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom, #principal #ejemplos-codigosqr #ejemplos-normales {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr {
+  gap: 20px;
+  display: flex;
+  padding: 30px;
+  border-radius: 20px;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr img, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr img {
+  width: 200px;
+  margin: 40px 0 40px 0;
+}
 #principal .info-bots {
-  width: 60%;
+  width: 70%;
   border: 1px solid blue;
   display: flex;
   align-items: center;
@@ -96,7 +131,7 @@ header a img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 #principal #opciones {
-  width: 60%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

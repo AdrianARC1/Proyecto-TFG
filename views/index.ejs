@@ -10,11 +10,7 @@
   <body>
     <%- include('partials/navegacion') %>
     <section id="principal">
-      <div id="ejemplos-normales">
-        <!-- <h1>Codigos QR normales hechos:
-          <img src="/images/logo.png" alt=""> -->
-        </h1>
-      </div>
+      
       <div class="info-bots">
         <div id="frases">
           <h1>Genera de manera<br> sencilla códigos QR.</h1>
@@ -24,6 +20,27 @@
           </div>
         </div>
         <%- include('partials/botones') %>
+      </div>
+
+      <div id="ejemplos-codigosqr" class="info-codigos">
+        <h1>Información</h1>
+        <p>¡Genera códigos QR personalizados con la mayor calidad posible!</p>
+        <div id="ejemplos-normales">
+          <h1>Codigos QR normales hechos:</h1>
+            <div class="div-codigosqr">
+              <% qrnormales.forEach(item => { %>
+                <img src="<%= item.codigoqrURL %>" alt="">
+                <% }); %>
+            </div>
+        </div>
+        <div id="ejemplos-custom">
+          <h1>Codigos QR custom hechos:</h1>
+            <div class="div-codigosqr" id="codigos-custom">
+              <% qrcustom.forEach(item => { %>
+                <img src="<%= item.codigoqrURL %>" alt="">
+                <% }); %>
+            </div>
+        </div>
       </div>
 
     </section>

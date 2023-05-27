@@ -18,16 +18,24 @@
         <a href="/descargar-qr">
             <button>Descargar imagen</button>
         </a>
-        <script>
-        function descargarImagen(imagenUrl) {
-    // Crear un elemento de enlace temporal
-    var link = document.createElement("a");
-    link.href = imagenUrl;
-    link.download = "nombre-del-archivo.png"; // Nombre del archivo descargado
+    </section>
+    <%- include('partials/footer') %>
 
-    // Simular un clic en el enlace para iniciar la descarga
-    link.click();
-  }
-      </script>
+
+
+
+
+<script>
+    function descargarImagen(imagenUrl) {
+      // Crear un elemento de enlace temporal
+      var link = document.createElement("a");
+      link.href = imagenUrl;
+      link.download = "nombre-del-archivo.png"; // Nombre del archivo descargado
+  
+      // Simular un clic en el enlace para iniciar la descarga
+      link.click();
+    }
+</script>
+
 </body>
 </html>

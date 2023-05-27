@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -29,6 +35,7 @@ body {
 
 #principal-qr img {
   margin: 60px;
+  width: 200px;
 }
 #principal-qr #textos {
   margin-top: 50px;
@@ -36,15 +43,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+#principal-qr #textos h1, #principal-qr #textos p {
   text-align: center;
   width: 50%;
 }
+
 #principal-texto, #principal-qr {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid green;
   background: #3498db;
 }
 #principal-texto #anclas, #principal-qr #anclas {
@@ -59,11 +69,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 20px;
+  border-radius: 0 0 10px 10px;
+  background: #afadad;
 }
 #principal-texto #anclas a, #principal-qr #anclas a {
   text-decoration: none;
-  color: black;
+  color: #0e3869;
   font-size: 20px;
   padding: 20px 60px 20px 60px;
   border: 1px solid blue;
@@ -79,7 +90,6 @@ body {
   transform: scale(1);
 }
 #principal-texto .texto-generar, #principal-qr .texto-generar {
-  border: 1px solid red;
   height: auto;
   width: 70%;
   display: flex;
@@ -104,12 +114,13 @@ body {
   width: 80%;
 }
 #principal-texto form input[type=text], #principal-qr form input[type=text] {
-  padding: 50px;
+  padding: 20px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #f5f5f5;
   color: #333;
+  width: 70%;
   transition: border-color 0.3s ease;
 }
 #principal-texto form input[type=text]::-moz-placeholder, #principal-qr form input[type=text]::-moz-placeholder {
