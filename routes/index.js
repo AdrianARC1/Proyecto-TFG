@@ -2,15 +2,22 @@ const express = require('express');
 const router = express.Router();
 const apiClient = require('./apiClient');
 require('dotenv').config()
-const pool = require('../db.js')
+const pool = require('../db')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/', async(req, res, next) => {
+  const [qrcustom] = await pool.query('SELECT * FROM codigosqr_db.codigosqr WHERE codigoqrURL IS NOT NULL AND (opcionBody IS NOT NULL AND opcionBody != "square") AND (opcionEye IS NOT NULL AND opcionEye != "frame0") AND (opcionEyeBall IS NOT NULL AND opcionEyeBall != "ball0") AND (bgColor NOT IN ("#f00000", "#ffffff")) AND bodyColor != "#000000";');
+  const [qrnormales] = await pool.query('SELECT * FROM codigosqr_db.codigosqr WHERE codigoqrURL IS NOT NULL AND opcionBody IS NULL OR opcionBody = "square" AND opcionEye IS NULL OR opcionEye = "frame0" AND opcionEyeBall IS NULL OR opcionEyeBall = "ball0" AND bgColor = "#f00000" or bgColor = "#ffffff" AND bodyColor = "#000000" LIMIT 3;');
+  
+  res.render('index', {qrcustom, qrnormales});
+});
+router.get('/qrcustom', function(req, res, next) {
+  res.render('qrcustom');
 });
 router.get('/usuarios', async (req, res, next)=>{
-  const [resul] = await pool.query('SELECT * FROM ejemplo')
-  console.log(resul);
+  const [resul] = await pool.query('SELECT * FROM motos')
+  res.json(resul)
+  console.log(resul)
 });
 
 router.get('/generate-qr', function(req, res, next) {
@@ -38,9 +45,9 @@ router.get('/generate-qr/texto', function(req, res, next) {
   res.render('pags-botones/texto', {tipoQR: 'texto'});
 });
 router.post('/generate-qr/texto', async (req, res) => {
-  const { data, opcionBody, opcionEye, opcionEyeBall, bgColor, bodyColor, logoUrl } = req.body;
+  const { data, opcionBody, opcionEye, opcionEyeBall, bgColor, bodyColor, logoUrl, size } = req.body;
   // console.log(req.body);
-  console.log(req.query.svg);
+  console.log(req.body);
   const qrConfig = {
     data,
     config: {
@@ -58,7 +65,7 @@ router.post('/generate-qr/texto', async (req, res) => {
       logo: logoUrl,
       logoMode: "clean"
     },
-    size: 400,
+    size: size,
     download: "imageUrl",
     file: "png"
   };
@@ -66,7 +73,8 @@ router.post('/generate-qr/texto', async (req, res) => {
   try {
     const response = await apiClient.post('/qr/custom', qrConfig);
     imageUrl = response.data.imageUrl
-    res.render('qrcustom', { imageUrl});
+    await pool.query('INSERT INTO codigosqr SET ?, codigoqrURL = ?', [req.body, imageUrl]);
+    res.redirect('/qrcustom');
   } catch (error) {
     console.error('Error:', error);
     res.render('error', {error});
