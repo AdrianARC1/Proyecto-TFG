@@ -1,18 +1,29 @@
 const express = require('express');
 const router = express.Router();
+const {isLoggedIn} = require('../config/auth')
+const pool = require('../database')
 const apiClient = require('./apiClient');
-require('dotenv').config()
-const pool = require('../db')
+
 
 /* GET home page. */
+
 router.get('/', async(req, res, next) => {
-  const [qrcustom] = await pool.query('SELECT * FROM codigosqr_db.codigosqr WHERE codigoqrURL IS NOT NULL AND (opcionBody IS NOT NULL AND opcionBody != "square") AND (opcionEye IS NOT NULL AND opcionEye != "frame0") AND (opcionEyeBall IS NOT NULL AND opcionEyeBall != "ball0") AND (bgColor NOT IN ("#f00000", "#ffffff")) AND bodyColor != "#000000";');
-  const [qrnormales] = await pool.query('SELECT * FROM codigosqr_db.codigosqr WHERE codigoqrURL IS NOT NULL AND opcionBody IS NULL OR opcionBody = "square" AND opcionEye IS NULL OR opcionEye = "frame0" AND opcionEyeBall IS NULL OR opcionEyeBall = "ball0" AND bgColor = "#f00000" or bgColor = "#ffffff" AND bodyColor = "#000000" LIMIT 3;');
+  const [qrcustom] = await pool.query('SELECT * FROM codigosqr WHERE codigoqrURL IS NOT NULL AND (opcionBody IS NOT NULL AND opcionBody != "square") AND (opcionEye IS NOT NULL AND opcionEye != "frame0") AND (opcionEyeBall IS NOT NULL AND opcionEyeBall != "ball0") AND (bgColor NOT IN ("#f00000", "#ffffff")) AND bodyColor != "#000000";');
+  const [qrnormales] = await pool.query('SELECT * FROM codigosqr WHERE codigoqrURL IS NOT NULL AND opcionBody IS NULL OR opcionBody = "square" AND opcionEye IS NULL OR opcionEye = "frame0" AND opcionEyeBall IS NULL OR opcionEyeBall = "ball0" AND bgColor = "#f00000" or bgColor = "#ffffff" AND bodyColor = "#000000" LIMIT 3;');
   
   res.render('index', {qrcustom, qrnormales});
 });
 router.get('/qrcustom', function(req, res, next) {
   res.render('qrcustom');
+});
+router.get('/biblioteca', isLoggedIn, async(req, res, next)=> {
+  const [resul] = await pool.query('SELECT * FROM codigosqr_db.codigosqr WHERE codigoqrURL IS NOT NULL;');
+
+  res.render('biblioteca', {resul});
+});
+
+router.get('/tus-qr', async(req, res, next)=> {
+  res.render('tusqr')
 });
 router.get('/usuarios', async (req, res, next)=>{
   const [resul] = await pool.query('SELECT * FROM motos')
@@ -105,4 +116,25 @@ router.get('/descargar-qr', (req, res) => {
   res.setHeader('Content-Disposition', 'attachment; filename="nombre-del-archivo.png"');
   res.download('/ruta-del-archivo.png');
 });
+
+
+router.get('/signin', function(req, res, next) {
+  res.render('auth/signin');
+});
+router.get('/like/:id', async (req, res, next)=>{
+  const {id} =req.params
+  await pool.query('UPDATE fotos set likes=likes+1 where id = ?',id)
+
+  res.redirect('/biblioteca')
+  
+});
+router.get('/dislike/:id', async (req, res, next)=>{
+  const {id} =req.params
+  await pool.query('UPDATE fotos set dislikes=dislikes+1 where id = ?',id)
+
+  res.redirect('/biblioteca')
+  
+});
+
+
 module.exports = router;
