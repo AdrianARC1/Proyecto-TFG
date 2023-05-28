@@ -9,6 +9,9 @@ $color-secundario-hover: #f2f2f2
     text-decoration: none
     font-family: 'Roboto', sans-serif
 
+a
+    text-decoration: none
+
 button
     cursor: pointer
 
@@ -27,11 +30,36 @@ header
             display: flex
             justify-content: space-around
             width: 20%
-            h1
-            margin-left: 50px
-            margin-right: 50px
-            font-size: 12px
+        #bib-help
+            display: flex
+            align-items: center
+            width: 40%
+            a
+                color: #f2f2f2
+                .custom
+                    color: #ffffff
+                    background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
+                    padding: 20px 30px
+                    border: none
+                    box-shadow: rgb(0,0,0) 0 0 0 0
+                    border-radius: 50px
+                    transition: 1s
+                    &:active
+                        transform: scale(0.95)
+                        transition: 0.4s
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+        #log-reg
+            display: flex
+            align-items: center
+            a 
+                color: white
+            #enlace-login
+                padding: 10px 30px
+                border-radius: 10px
+                background: #081b57
     a
+        font-size: 20px
+    
         img
             width: 170px
             margin-left: 50px
@@ -48,7 +76,22 @@ header
     justify-content: center
     align-items: center
     background: #3498db
-    #ejemplos-codigosqr
+    #todos-codigosqr
+        width: 80%
+        text-align: center
+        .div-codigosqr
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            gap: 30px
+            padding: 30px
+            padding-bottom: 60px
+            img
+                width: 200px
+                border: 1px solid
+    #ejemplos-codigosqr, #todos-codigosqr
+
         width: 100%
         display: flex
         flex-direction: column
@@ -58,15 +101,40 @@ header
         width: 70%
         margin-top: 50px
         border-radius: 20px
+        h1
+            font-size: 32px
+            margin-top: 50px
+        p
+            margin-top: 20px
+            margin-bottom: 20px
+        #ejemplos-normales
+            margin-bottom: 30px
         #ejemplos-custom, #ejemplos-normales
             height: 100%
             display: flex
             align-items: center
             flex-direction: column
+            h1
+                font-size: 25px
+                margin-top: 0px
+            #codigos-custom
+                overflow-x: scroll
+                width: 50%
+                overflow-y: hidden
+                &::-webkit-scrollbar 
+                    width: 20px
+                &::-webkit-scrollbar-track 
+                    background:  linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
+                    
+
+                &::-webkit-scrollbar-thumb 
+                    background: transparent
+
+                
             .div-codigosqr
-                gap: 20px
+                gap: 80px
                 display: flex
-                padding: 30px
+                padding-bottom: 0
                 border-radius: 20px
                 img
                     width: 200px
@@ -81,6 +149,7 @@ header
         border-radius: 20px
         height: min-content
         padding-bottom: 50px
+        margin-top: 50px
         #frases
             margin-top: 50px
             height: auto

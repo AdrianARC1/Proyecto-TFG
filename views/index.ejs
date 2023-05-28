@@ -29,7 +29,7 @@
           <h1>Codigos QR normales hechos:</h1>
             <div class="div-codigosqr">
               <% qrnormales.forEach(item => { %>
-                <img src="<%= item.codigoqrURL %>" alt="">
+                <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
                 <% }); %>
             </div>
         </div>
@@ -37,7 +37,7 @@
           <h1>Codigos QR custom hechos:</h1>
             <div class="div-codigosqr" id="codigos-custom">
               <% qrcustom.forEach(item => { %>
-                <img src="<%= item.codigoqrURL %>" alt="">
+                <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
                 <% }); %>
             </div>
         </div>

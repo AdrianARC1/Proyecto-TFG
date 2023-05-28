@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -29,9 +33,43 @@ header #links-header div {
   display: flex;
   justify-content: space-around;
   width: 20%;
-  margin-left: 50px;
-  margin-right: 50px;
-  font-size: 12px;
+}
+header #links-header #bib-help {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+header #links-header #bib-help a {
+  color: #f2f2f2;
+}
+header #links-header #bib-help a .custom {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+  padding: 20px 30px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 0 0 0 0;
+  border-radius: 50px;
+  transition: 1s;
+}
+header #links-header #bib-help a .custom:active {
+  transform: scale(0.95);
+  transition: 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+header #links-header #log-reg {
+  display: flex;
+  align-items: center;
+}
+header #links-header #log-reg a {
+  color: white;
+}
+header #links-header #log-reg #enlace-login {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #081b57;
+}
+header a {
+  font-size: 20px;
 }
 header a img {
   width: 170px;
@@ -48,7 +86,24 @@ header a img {
   align-items: center;
   background: #3498db;
 }
-#principal #ejemplos-codigosqr {
+#principal #todos-codigosqr {
+  width: 80%;
+  text-align: center;
+}
+#principal #todos-codigosqr .div-codigosqr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  padding-bottom: 60px;
+}
+#principal #todos-codigosqr .div-codigosqr img {
+  width: 200px;
+  border: 1px solid;
+}
+#principal #ejemplos-codigosqr, #principal #todos-codigosqr {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,19 +114,48 @@ header a img {
   margin-top: 50px;
   border-radius: 20px;
 }
-#principal #ejemplos-codigosqr #ejemplos-custom, #principal #ejemplos-codigosqr #ejemplos-normales {
+#principal #ejemplos-codigosqr h1, #principal #todos-codigosqr h1 {
+  font-size: 32px;
+  margin-top: 50px;
+}
+#principal #ejemplos-codigosqr p, #principal #todos-codigosqr p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#principal #ejemplos-codigosqr #ejemplos-normales, #principal #todos-codigosqr #ejemplos-normales {
+  margin-bottom: 30px;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom, #principal #ejemplos-codigosqr #ejemplos-normales, #principal #todos-codigosqr #ejemplos-custom, #principal #todos-codigosqr #ejemplos-normales {
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr {
-  gap: 20px;
+#principal #ejemplos-codigosqr #ejemplos-custom h1, #principal #ejemplos-codigosqr #ejemplos-normales h1, #principal #todos-codigosqr #ejemplos-custom h1, #principal #todos-codigosqr #ejemplos-normales h1 {
+  font-size: 25px;
+  margin-top: 0px;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom, #principal #todos-codigosqr #ejemplos-custom #codigos-custom, #principal #todos-codigosqr #ejemplos-normales #codigos-custom {
+  overflow-x: scroll;
+  width: 50%;
+  overflow-y: hidden;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar, #principal #todos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar, #principal #todos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar {
+  width: 20px;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar-track, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar-track, #principal #todos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar-track, #principal #todos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+}
+#principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar-thumb, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar-thumb, #principal #todos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar-thumb, #principal #todos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr, #principal #todos-codigosqr #ejemplos-custom .div-codigosqr, #principal #todos-codigosqr #ejemplos-normales .div-codigosqr {
+  gap: 80px;
   display: flex;
-  padding: 30px;
+  padding-bottom: 0;
   border-radius: 20px;
 }
-#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr img, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr img {
+#principal #ejemplos-codigosqr #ejemplos-custom .div-codigosqr img, #principal #ejemplos-codigosqr #ejemplos-normales .div-codigosqr img, #principal #todos-codigosqr #ejemplos-custom .div-codigosqr img, #principal #todos-codigosqr #ejemplos-normales .div-codigosqr img {
   width: 200px;
   margin: 40px 0 40px 0;
 }
@@ -86,6 +170,7 @@ header a img {
   height: -moz-min-content;
   height: min-content;
   padding-bottom: 50px;
+  margin-top: 50px;
 }
 #principal .info-bots #frases {
   margin-top: 50px;

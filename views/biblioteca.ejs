@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/links') %>
+    <title>QR Arc</title>
+  </head>
+  <body>
+    <%- include('partials/navegacion') %>
+    <section id="principal">
+      <div id="todos-codigosqr" class="info-codigos">
+        <h1>TODOS LOS QR GENERADOS</h1>
+        <div id="">
+          <h1>Codigos QR normales hechos:</h1>
+            <div class="div-codigosqr">
+              <% resul.forEach(item => { %>
+                <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
+                <% }); %>
+            </div>
+        </div>
+      </div>
+
+    </section>
+    <%- include('partials/footer') %>
+  </body>
+</html>
+

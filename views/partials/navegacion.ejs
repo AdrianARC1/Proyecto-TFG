@@ -10,16 +10,34 @@
 <body>
     <header>
         <a href="/"><img src="/images/logo2.2.png" alt=""></a>
-        <div id="links-header">
-          <div>
-            <h1>Biblioteca</h1>
-            <h1>Ayuda</h1>
+        <% if (user) { %>
+ 
+          <div id="links-header">
+            <div id="bib-help">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="#">Ayuda</a>
+              <a href="generate-qr"><button class="custom">Crear Code QR</button></a>
+            </div>
+            <div id="log-reg">
+              <a href="/tus-qr">Tus QR</a>
+              <a href="/logout">Logout</a>
+            </div>
           </div>
-          <div id="log-reg">
-            <h1>Login</h1>
-            <h1>Registrarse</h1>
+          <% } else { %>
+           
+          <div id="links-header">
+            <div id="bib-help">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="#">Ayuda</a>
+              <a href="generate-qr"><button class="custom">Crear Code QR</button></a>
+            </div>
+            <div id="log-reg">
+              <a href="/signin" id="enlace-login">Login</a>
+              <a href="/signup">Registrarse</a>
+            </div>
           </div>
-        </div>
+          <% } %>
+
       </header>
 </body>
 </html>

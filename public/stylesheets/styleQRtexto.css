@@ -74,7 +74,7 @@ body {
 }
 #principal-texto #anclas a, #principal-qr #anclas a {
   text-decoration: none;
-  color: #0e3869;
+  color: #020f1d;
   font-size: 20px;
   padding: 20px 60px 20px 60px;
   border: 1px solid blue;
@@ -133,6 +133,35 @@ body {
 }
 #principal-texto form input[type=text]:focus, #principal-qr form input[type=text]:focus {
   outline: none;
+}
+#principal-texto form input[type=range], #principal-qr form input[type=range] {
+  width: 80%;
+  height: 10px;
+  -webkit-appearance: none;
+  background-color: #3498db;
+  border-radius: 5px;
+}
+#principal-texto form input[type=range]::-webkit-slider-thumb, #principal-qr form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#principal-texto form input[type=range]::-moz-range-thumb, #principal-qr form input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#principal-texto form input[type=range]::-ms-thumb, #principal-qr form input[type=range]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  cursor: pointer;
 }
 #principal-texto form button, #principal-qr form button {
   font-family: Bebas Neue, sans-serif;
