@@ -11,7 +11,7 @@ const { database } = require('./keys')
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 
-const mysqlStore = require('express-mysql-session')
+const mysqlStore = require('express-mysql-session')(session);
 
 const app = express();
 require('./config/passport')
