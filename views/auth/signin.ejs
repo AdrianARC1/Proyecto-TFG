@@ -12,14 +12,24 @@
   <body>
     <%- include('../partials/navegacion') %>
     <section id="principal-signin" class="pags-logreg">
-        <h1>LOGUEARSE</h1>
-        <div class="">
+        <div class="form-signin">
+          <%= message %>
           <form action="/signin" method="POST">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button>Signin</button>
-        </div>
+            <a href="/"><img src="/images/logo2.2.png" alt=""></a>
+            <h1>Login</h1>
+            <p>¿No tienes cuenta?<a href="/signup">¡Registrate gratis!</a></p>
+            <div id="inputs">
+              <label for="username">Username:</label>            
+              <input type="text" name="username" placeholder="Username">
+              <label for="password">Password:</label>            
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            <button>Sign In</button>
+        
         </form>
+      </div>
+      <div id="segunda-parte-signin">
+        <h1>hola</h1>
       </div>
     </section>
     <%- include('../partials/footer.ejs') %>
