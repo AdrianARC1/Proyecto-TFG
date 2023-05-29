@@ -12,25 +12,32 @@
   <body>
     <%- include('../partials/navegacion') %>
     <section id="principal-signin" class="pags-logreg">
-        <div class="form-signin">
-          <%= message %>
-          <form action="/signin" method="POST">
-            <a href="/"><img src="/images/logo2.2.png" alt=""></a>
-            <h1>Login</h1>
-            <p>¿No tienes cuenta?<a href="/signup">¡Registrate gratis!</a></p>
-            <div id="inputs">
-              <label for="username">Username:</label>            
+      <div class="form-signin">
+        <%= message %>
+        <form action="/signin" method="POST">
+          <a href="/"><img src="../../images/logo2.2.png" alt=""></a>
+          <h1>Login</h1>
+          <p>¿No tienes cuenta?<a href="/signup"> ¡Registrate gratis!</a></p>
+          <div id="inputs">
+            <div class="div-inputs">
+              <label for="username">Username</label>            
               <input type="text" name="username" placeholder="Username">
-              <label for="password">Password:</label>            
-              <input type="password" name="password" placeholder="Password">
             </div>
-            <button>Sign In</button>
-        
-        </form>
-      </div>
-      <div id="segunda-parte-signin">
-        <h1>hola</h1>
-      </div>
+            <div class="div-inputs">
+              <label for="password">Password</label>            
+            <input type="password" name="password" placeholder="Password">
+            </div>
+            
+
+          </div>
+          <button>Acceder</button>
+          <div>
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/qr-code-scan-4065262-3361717.png" alt="">
+          </div>
+      </form>
+    </div>
+    <div id="segunda-parte-signin">
+    </div>
     </section>
     <%- include('../partials/footer.ejs') %>
   </body>

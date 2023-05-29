@@ -2,32 +2,102 @@
   height: 100vh;
 }
 
-#principal-signin {
+#principal-signin .form-signin form #inputs {
+  height: 30%;
+}
+
+#principal-signup .form-signin form #inputs {
+  height: 70%;
+}
+
+#principal-signin, #principal-signup {
   display: flex;
 }
-#principal-signin .form-signin {
+#principal-signin .form-signin, #principal-signup .form-signin {
   display: flex;
   justify-content: center;
-  width: 40%;
+  width: 30%;
+  background: white;
 }
-#principal-signin .form-signin img {
+#principal-signin .form-signin img, #principal-signup .form-signin img {
   width: 200px;
+  margin-top: 10%;
 }
-#principal-signin .form-signin form {
+#principal-signin .form-signin form, #principal-signup .form-signin form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
   background: white;
 }
-#principal-signin .form-signin form #inputs {
+#principal-signin .form-signin form h1, #principal-signup .form-signin form h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+#principal-signin .form-signin form p, #principal-signup .form-signin form p {
+  font-size: 16px;
+}
+#principal-signin .form-signin form button, #principal-signup .form-signin form button {
+  font-family: Bebas Neue, sans-serif;
+  color: #fff;
+  background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+  padding: 20px 50px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 0 0 0 0;
+  border-radius: 15px;
+  transition: 1s;
+  width: 50%;
+}
+#principal-signin .form-signin form button:hover, #principal-signup .form-signin form button:hover {
+  background-color: #f2f2f2;
+}
+#principal-signin .form-signin form button:active, #principal-signup .form-signin form button:active {
+  transform: scale(0.95);
+  transition: 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#principal-signin .form-signin form #inputs, #principal-signup .form-signin form #inputs {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  height: 20%;
+  width: 100%;
 }
-#principal-signin #segunda-parte-signin {
-  width: 60%;
-  background: black;
+#principal-signin .form-signin form #inputs .div-inputs, #principal-signup .form-signin form #inputs .div-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#principal-signin .form-signin form #inputs .div-inputs label, #principal-signup .form-signin form #inputs .div-inputs label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+#principal-signin .form-signin form #inputs .div-inputs input[type=text], #principal-signin .form-signin form #inputs .div-inputs input[type=password], #principal-signup .form-signin form #inputs .div-inputs input[type=text], #principal-signup .form-signin form #inputs .div-inputs input[type=password] {
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+#principal-signin .form-signin form #inputs .div-inputs input[type=text]::-moz-placeholder, #principal-signin .form-signin form #inputs .div-inputs input[type=password]::-moz-placeholder, #principal-signup .form-signin form #inputs .div-inputs input[type=text]::-moz-placeholder, #principal-signup .form-signin form #inputs .div-inputs input[type=password]::-moz-placeholder {
+  color: #999;
+  text-align: start;
+}
+#principal-signin .form-signin form #inputs .div-inputs input[type=text]::placeholder, #principal-signin .form-signin form #inputs .div-inputs input[type=password]::placeholder, #principal-signup .form-signin form #inputs .div-inputs input[type=text]::placeholder, #principal-signup .form-signin form #inputs .div-inputs input[type=password]::placeholder {
+  color: #999;
+  text-align: start;
+}
+#principal-signin .form-signin form #inputs .div-inputs input[type=text]:focus, #principal-signin .form-signin form #inputs .div-inputs input[type=password]:focus, #principal-signup .form-signin form #inputs .div-inputs input[type=text]:focus, #principal-signup .form-signin form #inputs .div-inputs input[type=password]:focus {
+  outline: none;
+}
+#principal-signin #segunda-parte-signin, #principal-signup #segunda-parte-signin {
+  width: 70%;
+  background: url("../images/fondoqr-transformed.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }/*# sourceMappingURL=paginasLogReg.css.map */

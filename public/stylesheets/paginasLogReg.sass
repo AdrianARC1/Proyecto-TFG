@@ -1,31 +1,89 @@
 .pags-logreg
     height: 100vh
 
-
 #principal-signin
+    .form-signin
+        form
+            #inputs
+                height: 30%
+#principal-signup
+    .form-signin
+        form
+            #inputs
+                height: 70%
+#principal-signin, #principal-signup
     display: flex
     .form-signin
         display: flex
         justify-content: center
-        width: 40%
+        width: 30%
         background: white
-        border: 1px solid red
         img
             width: 200px
+            margin-top: 10%
         form
             display: flex
             flex-direction: column
             align-items: center
             width: 80%
             background: white
+            h1
+                margin-top: 30px
+                margin-bottom: 30px
+                font-size: 40px
+            p
+                font-size: 16px
+            button
+                font-family: Bebas Neue,sans-serif
+                color: #fff
+                background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
+                padding: 20px 50px
+                border: none
+                box-shadow: rgb(0,0,0) 0 0 0 0
+                border-radius: 15px
+                transition: 1s
+                width: 50%
+
+                &:hover
+                    background-color: #f2f2f2
+
+                &:active
+                    transform: scale(0.95)
+                    transition: 0.4s
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
             #inputs
                 display: flex
                 flex-direction: column
                 align-items: flex-start
                 justify-content: space-evenly
-                height: 20%
-                input
-                    width: 
+                width: 100%
+                
+                .div-inputs
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    label
+                        font-size: 16px
+                        font-weight: bold
+                        margin-bottom: 2px
+                    input[type="text"], input[type="password"]
+                        padding: 20px
+                        font-size: 16px
+                        border: 1px solid #ccc
+                        border-radius: 15px
+                        background-color: #f5f5f5
+                        color: #333
+                        transition: border-color 0.3s ease
+
+                        &::placeholder
+                            color: #999
+                            text-align: start
+
+                        &:focus
+                            outline: none
     #segunda-parte-signin
-        width: 60%
-        background: black
+        width: 70%
+        background: url('../images/fondoqr-transformed.jpeg')
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: 50% 50%
