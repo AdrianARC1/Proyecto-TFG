@@ -1,9 +1,5 @@
-<h1>Codigo QR para <%= tipoQR %> </h1>
-<form action="/generate-qr/texto" method="post">
-    <div class="texto-generar">
-      <label for="data">Introduce el <%= tipoQR %> que quieras generar a codigo QR:</label>
-      <input type="text" name="data" id="data" required placeholder="Texto a generar">
-    </div>
+<h1>Codigo QR para <%= tipoQR %></h1>
+
     <div id="anclas">
       <a href="#div-formas">Formas</a>
       <a href="#div-colores">Colores</a>
@@ -139,7 +135,7 @@
     <h2>Colores</h2>
       <div class="div-colores">
         <label for="bgColor">Color de fondo:</label>
-    <input type="color" name="bgColor" id="bgColor" value="#FFFFFF"  data-picker="WKCP">
+    <input type="color" name="bgColor" id="bgColor" value="#FFFFFF">
 
     <label for="bodyColor">Color del cuerpo:</label>
     <input type="color" name="bodyColor" id="bodyColor" value="#000000">

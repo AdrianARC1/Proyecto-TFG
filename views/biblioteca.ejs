@@ -13,10 +13,16 @@
       <div id="todos-codigosqr" class="info-codigos">
         <h1>TODOS LOS QR GENERADOS</h1>
         <div id="">
-          <h1>Codigos QR normales hechos:</h1>
+          <h1>Codigos QR en la biblioteca: <%= resul.length %></h1>
             <div class="div-codigosqr">
               <% resul.forEach(item => { %>
-                <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
+                <div class="imagenes-like-dislke">
+                  <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
+                  <div id="iconos">
+                    <a href="/like/<%= item.id %>"><i class="fa-regular fa-thumbs-up"></i><p><%= item.likes %></p></a>
+                    <a href="/dislike/<%= item.id %>"><i class="fa-regular fa-thumbs-down"></i><p><%= item.dislikes %></p></a>
+                  </div>
+                </div>
                 <% }); %>
             </div>
         </div>

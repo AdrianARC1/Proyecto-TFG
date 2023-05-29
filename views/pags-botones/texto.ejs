@@ -11,40 +11,18 @@
   <body>
     <%- include('../partials/navegacion') %>
     <section id="principal-texto">
-      
+      <form action="/generate-qr/texto" method="post">
+        <div class="codigo-generar">
+          <label for="data">Introduce el texto que quieras generar a codigo QR:</label>
+          <input type="text" name="data" id="data" required placeholder="Texto a generar">
+        </div>
       <%- include('../partials/configuracionQR') %>
 
     
     </section>
     <%- include('../partials/footer') %>
 
-    <script>
-        const div = document.getElementById('divPrueba');
-        const div2 = document.getElementById('divPrueba2');
-        const div3 = document.getElementById('divPrueba3');
-        const boton = document.getElementById('botonFlotante');
-        const boton2 = document.getElementById('botonFlotante2');
-        const boton3 = document.getElementById('botonFlotante3');
-
-        boton.addEventListener('click', function() {
-        div.classList.toggle('div-expandido');
-        });
-        boton2.addEventListener('click', function() {
-        div2.classList.toggle('div-expandido');
-        });
-        boton3.addEventListener('click', function() {
-        div3.classList.toggle('div-expandido');
-        });
-      
-
-      function actuValor() {
-        const inpRange = document.getElementById("inpRange");
-        const valorRango = document.getElementById("valorRango");
-        valorRango.textContent = inpRange.value+"px";
-    }
-
-    actuValor();
-    </script>
+    <%- include('../partials/script_parcial.ejs') %>
   </body>
 </html>
 
