@@ -4,6 +4,9 @@ module.exports={
         if(req.isAuthenticated()){
             return next()
         }
+        if (req.path === '/tus-qr') {
+            return res.redirect('/');
+          }
         next()
     },
     isNotLoggedIn(req,res,next){
