@@ -48,7 +48,7 @@ header #links-header #bib-help a .custom {
   padding: 20px 30px;
   border: none;
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 1s;
 }
 header #links-header #bib-help a .custom:active {
@@ -99,6 +99,16 @@ header a img {
   padding: 30px;
   padding-bottom: 60px;
 }
+#principal #todos-codigosqr .div-codigosqr .imagenes-like-dislke #iconos {
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  display: flex;
+  font-size: 20px;
+}
+#principal #todos-codigosqr .div-codigosqr .imagenes-like-dislke #iconos a {
+  color: black;
+}
 #principal #todos-codigosqr .div-codigosqr img {
   width: 200px;
   border: 1px solid;
@@ -130,6 +140,7 @@ header a img {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 90%;
 }
 #principal #ejemplos-codigosqr #ejemplos-custom h1, #principal #ejemplos-codigosqr #ejemplos-normales h1, #principal #todos-codigosqr #ejemplos-custom h1, #principal #todos-codigosqr #ejemplos-normales h1 {
   font-size: 25px;
@@ -137,7 +148,7 @@ header a img {
 }
 #principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom, #principal #todos-codigosqr #ejemplos-custom #codigos-custom, #principal #todos-codigosqr #ejemplos-normales #codigos-custom {
   overflow-x: scroll;
-  width: 50%;
+  width: 80%;
   overflow-y: hidden;
 }
 #principal #ejemplos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar, #principal #ejemplos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar, #principal #todos-codigosqr #ejemplos-custom #codigos-custom::-webkit-scrollbar, #principal #todos-codigosqr #ejemplos-normales #codigos-custom::-webkit-scrollbar {
@@ -161,29 +172,25 @@ header a img {
 }
 #principal .info-bots {
   width: 70%;
-  border: 1px solid blue;
   display: flex;
   align-items: center;
   flex-direction: column;
   background: white;
-  border-radius: 20px;
   height: -moz-min-content;
   height: min-content;
   padding-bottom: 50px;
   margin-top: 50px;
+  border-radius: 20px;
 }
 #principal .info-bots #frases {
   margin-top: 50px;
+  text-align: center;
   height: auto;
   width: 60%;
-  border: 1px solid;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 100px 0 100px 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 #principal .info-bots #frases h1 {
@@ -191,9 +198,9 @@ header a img {
   color: #3498db;
 }
 #principal .info-bots #frases p {
-  font-size: 30px;
+  font-size: 20px;
   color: #555555;
-  line-height: 1.5;
+  margin-top: 30px;
   text-align: center;
 }
 #principal .info-bots #frases .custom {
@@ -203,7 +210,7 @@ header a img {
   padding: 20px 50px;
   border: none;
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 1s;
   margin-top: 40px;
 }

@@ -60,7 +60,7 @@ body
         align-items: center
         justify-content: space-around
         border-radius: 0 0 10px 10px
-        background: #afadad
+        background: #145c97
         a
             text-decoration: none
             color: #020f1d
@@ -69,6 +69,7 @@ body
             border: 1px solid blue
             border-radius: 20px
             transition: transform 0.4s ease
+            background: white
             &:hover
                 transition: .6s
                 transform: scale(1.07)
@@ -76,13 +77,14 @@ body
                 transition: .6s
                 transform: scale(1)
                 
-    .texto-generar
+    .codigo-generar
         height: auto
         width: 70%
         display: flex
         align-items: center
         justify-content: center
         flex-direction: column
+        margin-bottom: 50px
         h1
             font-size: 40px
         label
@@ -95,7 +97,7 @@ body
         align-items: center
         justify-content: center
         width: 80%
-        input[type="text"]
+        input[type="text"], input[type="password"]
             padding: 20px
             font-size: 16px
             border: 1px solid #ccc
@@ -190,7 +192,8 @@ body
                         position: absolute
                         top: 0px
                         margin: auto
-                        padding: 30px
+                        padding: 20px
+                        border-radius: 10px
                 .div-expandido
                     max-height: 600px
                     

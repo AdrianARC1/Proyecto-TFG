@@ -70,7 +70,7 @@ body {
   align-items: center;
   justify-content: space-around;
   border-radius: 0 0 10px 10px;
-  background: #afadad;
+  background: #145c97;
 }
 #principal-texto #anclas a, #principal-qr #anclas a {
   text-decoration: none;
@@ -80,6 +80,7 @@ body {
   border: 1px solid blue;
   border-radius: 20px;
   transition: transform 0.4s ease;
+  background: white;
 }
 #principal-texto #anclas a:hover, #principal-qr #anclas a:hover {
   transition: 0.6s;
@@ -89,21 +90,22 @@ body {
   transition: 0.6s;
   transform: scale(1);
 }
-#principal-texto .texto-generar, #principal-qr .texto-generar {
+#principal-texto .codigo-generar, #principal-qr .codigo-generar {
   height: auto;
   width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 50px;
 }
-#principal-texto .texto-generar h1, #principal-qr .texto-generar h1 {
+#principal-texto .codigo-generar h1, #principal-qr .codigo-generar h1 {
   font-size: 40px;
 }
-#principal-texto .texto-generar label, #principal-qr .texto-generar label {
+#principal-texto .codigo-generar label, #principal-qr .codigo-generar label {
   font-size: 30px;
 }
-#principal-texto .texto-generar label, #principal-texto .texto-generar input, #principal-qr .texto-generar label, #principal-qr .texto-generar input {
+#principal-texto .codigo-generar label, #principal-texto .codigo-generar input, #principal-qr .codigo-generar label, #principal-qr .codigo-generar input {
   margin: 20px;
 }
 #principal-texto form, #principal-qr form {
@@ -113,7 +115,7 @@ body {
   justify-content: center;
   width: 80%;
 }
-#principal-texto form input[type=text], #principal-qr form input[type=text] {
+#principal-texto form input[type=text], #principal-texto form input[type=password], #principal-qr form input[type=text], #principal-qr form input[type=password] {
   padding: 20px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -123,15 +125,15 @@ body {
   width: 70%;
   transition: border-color 0.3s ease;
 }
-#principal-texto form input[type=text]::-moz-placeholder, #principal-qr form input[type=text]::-moz-placeholder {
+#principal-texto form input[type=text]::-moz-placeholder, #principal-texto form input[type=password]::-moz-placeholder, #principal-qr form input[type=text]::-moz-placeholder, #principal-qr form input[type=password]::-moz-placeholder {
   color: #999;
   text-align: start;
 }
-#principal-texto form input[type=text]::placeholder, #principal-qr form input[type=text]::placeholder {
+#principal-texto form input[type=text]::placeholder, #principal-texto form input[type=password]::placeholder, #principal-qr form input[type=text]::placeholder, #principal-qr form input[type=password]::placeholder {
   color: #999;
   text-align: start;
 }
-#principal-texto form input[type=text]:focus, #principal-qr form input[type=text]:focus {
+#principal-texto form input[type=text]:focus, #principal-texto form input[type=password]:focus, #principal-qr form input[type=text]:focus, #principal-qr form input[type=password]:focus {
   outline: none;
 }
 #principal-texto form input[type=range], #principal-qr form input[type=range] {
@@ -213,7 +215,8 @@ body {
   position: absolute;
   top: 0px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
+  border-radius: 10px;
 }
 #principal-texto form .todas-opciones .opcionBody .div-expandido, #principal-texto form .todas-opciones .opcionEye .div-expandido, #principal-texto form .todas-opciones .opcionEyeBall .div-expandido, #principal-texto form .logo-qr .opcionBody .div-expandido, #principal-texto form .logo-qr .opcionEye .div-expandido, #principal-texto form .logo-qr .opcionEyeBall .div-expandido, #principal-texto form .colores-qr .opcionBody .div-expandido, #principal-texto form .colores-qr .opcionEye .div-expandido, #principal-texto form .colores-qr .opcionEyeBall .div-expandido, #principal-texto form .size .opcionBody .div-expandido, #principal-texto form .size .opcionEye .div-expandido, #principal-texto form .size .opcionEyeBall .div-expandido, #principal-qr form .todas-opciones .opcionBody .div-expandido, #principal-qr form .todas-opciones .opcionEye .div-expandido, #principal-qr form .todas-opciones .opcionEyeBall .div-expandido, #principal-qr form .logo-qr .opcionBody .div-expandido, #principal-qr form .logo-qr .opcionEye .div-expandido, #principal-qr form .logo-qr .opcionEyeBall .div-expandido, #principal-qr form .colores-qr .opcionBody .div-expandido, #principal-qr form .colores-qr .opcionEye .div-expandido, #principal-qr form .colores-qr .opcionEyeBall .div-expandido, #principal-qr form .size .opcionBody .div-expandido, #principal-qr form .size .opcionEye .div-expandido, #principal-qr form .size .opcionEyeBall .div-expandido {
   max-height: 600px;

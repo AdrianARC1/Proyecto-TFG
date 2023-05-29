@@ -42,7 +42,7 @@ header
                     padding: 20px 30px
                     border: none
                     box-shadow: rgb(0,0,0) 0 0 0 0
-                    border-radius: 50px
+                    border-radius: 10px
                     transition: 1s
                     &:active
                         transform: scale(0.95)
@@ -87,6 +87,15 @@ header
             gap: 30px
             padding: 30px
             padding-bottom: 60px
+            .imagenes-like-dislke
+                #iconos
+                    align-items: center
+                    justify-content: space-evenly
+                    margin-top: 10px
+                    display: flex
+                    font-size: 20px
+                    a
+                        color: black
             img
                 width: 200px
                 border: 1px solid
@@ -114,12 +123,13 @@ header
             display: flex
             align-items: center
             flex-direction: column
+            width: 90%
             h1
                 font-size: 25px
                 margin-top: 0px
             #codigos-custom
                 overflow-x: scroll
-                width: 50%
+                width: 80%
                 overflow-y: hidden
                 &::-webkit-scrollbar 
                     width: 20px
@@ -141,35 +151,31 @@ header
                     margin: 40px 0 40px 0
     .info-bots
         width: 70%
-        border: 1px solid blue
         display: flex
         align-items: center
         flex-direction: column
         background: white
-        border-radius: 20px
         height: min-content
         padding-bottom: 50px
         margin-top: 50px
+        border-radius: 20px
         #frases
             margin-top: 50px
+            text-align: center
             height: auto
             width: 60%
-            border: 1px solid
             display: flex
             align-items: center
             flex-direction: column
-            background-color: #f2f2f2
             padding: 20px
-            border-radius: 100px 0 100px 0
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
             margin-bottom: 20px
             h1
                 font-size: 60px
                 color: #3498db
             p
-                font-size: 30px
+                font-size: 20px
                 color: #555555
-                line-height: 1.5
+                margin-top: 30px
                 text-align: center
             .custom
                 font-family: Bebas Neue,sans-serif
@@ -178,7 +184,7 @@ header
                 padding: 20px 50px
                 border: none
                 box-shadow: rgb(0,0,0) 0 0 0 0
-                border-radius: 50px
+                border-radius: 10px
                 transition: 1s
                 margin-top: 40px
 
