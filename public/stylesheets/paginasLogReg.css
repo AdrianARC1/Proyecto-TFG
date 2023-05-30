@@ -2,16 +2,26 @@
   height: 100vh;
 }
 
+#principal-signin .form-signin #div-imagen {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 40%;
+}
 #principal-signin .form-signin form #inputs {
   height: 30%;
 }
 
+#principal-signup .form-signin img {
+  width: 100px;
+}
 #principal-signup .form-signin form #inputs {
   height: 70%;
 }
 
 #principal-signin, #principal-signup {
   display: flex;
+  height: 90vh;
 }
 #principal-signin .form-signin, #principal-signup .form-signin {
   display: flex;
@@ -21,7 +31,6 @@
 }
 #principal-signin .form-signin img, #principal-signup .form-signin img {
   width: 200px;
-  margin-top: 10%;
 }
 #principal-signin .form-signin form, #principal-signup .form-signin form {
   display: flex;
@@ -31,9 +40,9 @@
   background: white;
 }
 #principal-signin .form-signin form h1, #principal-signup .form-signin form h1 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 30px;
 }
 #principal-signin .form-signin form p, #principal-signup .form-signin form p {
   font-size: 16px;

@@ -287,6 +287,9 @@ header a img {
   height: -moz-min-content;
   height: min-content;
 }
+#principal .div-qr #iconos {
+  display: flex;
+}
 #principal .div-qr #opciones {
   width: 100%;
   margin-top: 50px;

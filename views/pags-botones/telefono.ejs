@@ -11,10 +11,10 @@
   <body>
     <%- include('../partials/navegacion') %>
     <section id="principal-texto">
-      <form action="/generate-qr/url" method="post">
+      <form action="/generate-qr/telefono" method="post">
         <div class="codigo-generar">
-          <label for="url">Introduce la url que quieras generar a codigo QR:</label>
-          <input type="url" name="url" id="data" required placeholder="Url a generar">
+          <label for="telefono">Introduce el telefono que quieras generar a codigo QR:</label>
+          <input type="tel" name="telefono" id="telefono" required placeholder="Telefono a generar">
         </div>
       <%- include('../partials/configuracionQR') %>
 

@@ -115,7 +115,7 @@ body {
   justify-content: center;
   width: 80%;
 }
-#principal-texto form input[type=text], #principal-texto form input[type=password], #principal-qr form input[type=text], #principal-qr form input[type=password] {
+#principal-texto form input[type=text], #principal-texto form input[type=password], #principal-texto form input[type=tel], #principal-texto form input[type=email], #principal-texto form input[type=url], #principal-texto form input[type=number], #principal-qr form input[type=text], #principal-qr form input[type=password], #principal-qr form input[type=tel], #principal-qr form input[type=email], #principal-qr form input[type=url], #principal-qr form input[type=number] {
   padding: 20px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -125,15 +125,15 @@ body {
   width: 70%;
   transition: border-color 0.3s ease;
 }
-#principal-texto form input[type=text]::-moz-placeholder, #principal-texto form input[type=password]::-moz-placeholder, #principal-qr form input[type=text]::-moz-placeholder, #principal-qr form input[type=password]::-moz-placeholder {
+#principal-texto form input[type=text]::-moz-placeholder, #principal-texto form input[type=password]::-moz-placeholder, #principal-texto form input[type=tel]::-moz-placeholder, #principal-texto form input[type=email]::-moz-placeholder, #principal-texto form input[type=url]::-moz-placeholder, #principal-texto form input[type=number]::-moz-placeholder, #principal-qr form input[type=text]::-moz-placeholder, #principal-qr form input[type=password]::-moz-placeholder, #principal-qr form input[type=tel]::-moz-placeholder, #principal-qr form input[type=email]::-moz-placeholder, #principal-qr form input[type=url]::-moz-placeholder, #principal-qr form input[type=number]::-moz-placeholder {
   color: #999;
   text-align: start;
 }
-#principal-texto form input[type=text]::placeholder, #principal-texto form input[type=password]::placeholder, #principal-qr form input[type=text]::placeholder, #principal-qr form input[type=password]::placeholder {
+#principal-texto form input[type=text]::placeholder, #principal-texto form input[type=password]::placeholder, #principal-texto form input[type=tel]::placeholder, #principal-texto form input[type=email]::placeholder, #principal-texto form input[type=url]::placeholder, #principal-texto form input[type=number]::placeholder, #principal-qr form input[type=text]::placeholder, #principal-qr form input[type=password]::placeholder, #principal-qr form input[type=tel]::placeholder, #principal-qr form input[type=email]::placeholder, #principal-qr form input[type=url]::placeholder, #principal-qr form input[type=number]::placeholder {
   color: #999;
   text-align: start;
 }
-#principal-texto form input[type=text]:focus, #principal-texto form input[type=password]:focus, #principal-qr form input[type=text]:focus, #principal-qr form input[type=password]:focus {
+#principal-texto form input[type=text]:focus, #principal-texto form input[type=password]:focus, #principal-texto form input[type=tel]:focus, #principal-texto form input[type=email]:focus, #principal-texto form input[type=url]:focus, #principal-texto form input[type=number]:focus, #principal-qr form input[type=text]:focus, #principal-qr form input[type=password]:focus, #principal-qr form input[type=tel]:focus, #principal-qr form input[type=email]:focus, #principal-qr form input[type=url]:focus, #principal-qr form input[type=number]:focus {
   outline: none;
 }
 #principal-texto form input[type=range], #principal-qr form input[type=range] {

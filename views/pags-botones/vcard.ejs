@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleQRtexto.css">
+    <%- include('../partials/links') %>
+    <title>QR Arc</title>
+  </head>
+  <body>
+    <%- include('../partials/navegacion') %>
+    <section id="principal-texto">
+      <form action="/generate-qr/vcard" method="post">
+        <div class="codigo-generar">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Nombre de red">
+  
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" class="inputTextoVistas"  id="password" required placeholder="Apellido">
+            
+            <label for="telefono">Telefono:</label>
+            <input type="tel" name="telefono" class="inputTextoVistas"  id="password" required placeholder="Telefono">
+            
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" class="inputTextoVistas"  id="password" required placeholder="Correo">
+        </div>
+      <%- include('../partials/configuracionQR') %>
+
+    
+    </section>
+    <%- include('../partials/footer') %>
+
+    <%- include('../partials/script_parcial.ejs') %>
+  </body>
+</html>
+

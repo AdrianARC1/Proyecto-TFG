@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleQRtexto.css">
     <%- include('../partials/links') %>
     <title>QR Arc</title>
   </head>
   <body>
-    <h1>Codigo QR para geolocalizacion.</h1>
-    <form action="/generate-qr/wifi" method="post">
-      <label for="url">
-        <input type="text" name="latitud" required>
-        <input type="text" name="longitud" required>
-        <button type="submit">Generar QR</button>
+    <%- include('../partials/navegacion') %>
+    <section id="principal-texto">
+      <form action="/generate-qr/geolocalizacion" method="post">
+        <div class="codigo-generar">
+          <label for="localizacion">Introduce la geolocalización que quieras generar a codigo QR:</label>
+          <input type="number" step="any" name="latitud" required placeholder="Latitud">
+          <input type="number" step="any" name="longitud" required placeholder="Longitud">
+        </div>
+      <%- include('../partials/configuracionQR') %>
 
-      </label>
-    </form>
-  </section>
+    
+    </section>
+    <%- include('../partials/footer') %>
+
+    <%- include('../partials/script_parcial.ejs') %>
   </body>
 </html>
+
