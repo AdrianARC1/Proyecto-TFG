@@ -97,7 +97,7 @@ router.post('/generate-qr/url', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -158,7 +158,7 @@ router.post('/generate-qr/texto', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size: size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -173,7 +173,7 @@ router.post('/generate-qr/texto', isLoggedIn, async (req, res) => {
       
     }
     
-    res.render('qrcustom',{tipoQR: 'WiFi'});
+    res.render('qrcustom',{tipoQR: 'texto'});
   } catch (error) {
     console.error('Error:', error);
     res.render('error', {error});
@@ -228,7 +228,7 @@ router.post('/generate-qr/wifi', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -294,7 +294,7 @@ router.post('/generate-qr/telefono', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -361,7 +361,7 @@ router.post('/generate-qr/geolocalizacion', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -430,7 +430,7 @@ router.post('/generate-qr/sms', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -481,7 +481,7 @@ router.post('/generate-qr/redes', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -536,7 +536,7 @@ router.post('/generate-qr/pdf', isLoggedIn, async (req, res) => {
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -618,7 +618,7 @@ END:VCARD`;
       logoMode: "clean"
     },
     size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
 
@@ -713,7 +713,7 @@ router.post('/edit/:id', isLoggedIn, async (req, res, next)=>{
       logoMode: "clean"
     },
     size: size,
-    download: "imageUrl",
+    download: true,
     file: "png"
   };
   try {

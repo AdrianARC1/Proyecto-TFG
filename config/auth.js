@@ -5,7 +5,7 @@ module.exports={
             return next()
         }
         if (req.path === '/tus-qr') {
-            return res.redirect('/');
+            return res.redirect('/error');
           }
         next()
     },
