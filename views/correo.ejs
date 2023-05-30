@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="principal-correo" style="width: 100%;height: auto;padding-bottom: 30px;display: flex;flex-direction: column;align-items: center;">
+        <div id="div-correo" style="background: #3498db;width: 40%;display: flex;flex-direction: column;text-align: start;padding: 100px;">
+            <div id="logo" style="display: flex;justify-content: center;align-items: center;"><img src="/images/logo2.2.png" alt="" style="width: 200px;"></div>
+            <h1 style="text-align: start;">Hola ${fullname},</h1><br>
+            <p style="text-align: start;">gracias por registrarte en nuestro generador de QR's,<br>¡ahora podrás disfrutar de las características más interesantes!</p>
+            <div id="imagen" style="width: 100%;display: flex;justify-content: center;align-items: center;margin-top: 100px;">
+                <img src="http://api.qrcode-monkey.com/tmp/1febb5012dd79cf3f2f52b563807c35d.png" alt="" style="width: 200px;">
+            </div>
+        </div>
+    <%- include('partials/footer') %>
+        
+    </section>
+    
+</body>
+</html>

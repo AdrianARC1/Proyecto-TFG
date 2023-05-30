@@ -5,14 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/styleQRtexto.css">
+    <link rel="stylesheet" href="/stylesheets/error404.css">
     <%- include('partials/links') %>
     <title>QR Arc</title>
   </head>
   <body>
     <%- include('partials/navegacion') %>
-    <section id="principal-texto">
-    <p>hola</p>
-    <h1><%= message %></h1>
-    <h2><%= error.status %></h2>
-    <pre><%= error.stack %></pre></body>
+    <%- include('partials/hamburguesa') %>
+    <section id="principal-error">
+      <div id="error-principal">
+        <div id="info-error">
+          <img src="/images/error404.png" alt="">
+          <p>¡Oops, has llegado a la sección de QR's corruptos, vuelve al <a href="/">inicio</a> antes de que sea tarde!</p>
+          <a href="/" style="text-decoration:none; color:inherit;">
+            <h1 class="glitch">
+              <span aria-hidden="true">¡Llévame de vuelta!</span>
+              ¡Llévame de vuelta!
+              <span aria-hidden="true">¡Llévame de vuelta!</span>
+            </h1>
+          </a>
+        </div>
+        <div id="div-error">
+          <img src="/images/qrglitch.jpeg" alt="">
+          <!-- <h1><%= message %></h1>
+          <h2><%= error.status %></h2>
+          <pre><%= error.stack %></pre></body> -->
+        </div>
+      </div>
+    </section>
+    <%- include('partials/footer') %>
 </html>

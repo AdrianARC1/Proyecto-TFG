@@ -1,0 +1,27 @@
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+    <div class="caja-logo">
+      <a href="/"><img src="/images/logo2.2.png" class="logo" alt=""></a>
+    </div>
+    <% if (user) {%>
+    <ul>
+        <li><a href="/biblioteca">Biblioteca</a></li>
+        <li><a href="/masvotados">Tendencia</a></li>
+        <li><a href="/nuevosqr">Nuevos</a></li>
+        <li><a href="generate-qr">Crear QR</a></li>
+        <li><a href="/tus-qr">Tus QR</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+        <li><a href="/biblioteca">Biblioteca</a></li>
+        <li><a href="/masvotados">Tendencia</a></li>
+        <li><a href="/nuevosqr">Nuevos</a></li>
+        <li><a href="generate-qr">Crear QR</a></li>
+        <li><a href="/signin">Login</a></li>
+        <li><a href="/signun">Registrarse</a></li>
+    </ul>
+    
+    <% } %>
+</nav>

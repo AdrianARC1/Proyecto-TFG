@@ -92,6 +92,7 @@ body
         label, input
             margin: 20px
     form
+        padding-bottom: 30px
         display: flex
         flex-direction: column
         align-items: center
@@ -114,7 +115,7 @@ body
             &:focus
                 outline: none
         input[type="range"] 
-            width: 80%
+            width: 90%
             height: 10px
             -webkit-appearance: none
             background-color: #3498db
@@ -250,4 +251,55 @@ body
                         display: inline-block
         .colores-qr
             .div-colores
-                flex-direction: row
+                display: flex
+                flex-direction: column
+        .logo-qr
+            input, label
+                width: 100%
+
+@media only screen and (max-width: 1024px)
+#principal-texto, #principal-qr
+    #anclas
+        display: none
+    form
+        h1
+            text-align: center
+        .colores-qr
+            width: 100%
+            .div-colores
+                width: 100%
+                flex-direction: column
+        .codigo-generar
+            label
+                text-align: center
+        .todas-opciones
+            h2,h1
+                text-align: center
+            .div-opciones
+                margin-top: 30px
+                margin: 10px
+            .logo-qr
+                width: 100%
+                label
+                    text-align: center
+                    width: 100%
+            .colores-qr
+                .div-colores
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    label
+                        text-align: center
+                        margin: 10px 0
+            .opcionBody,.opcionEye,.opcionEyeBall
+                .div-expandido
+                    max-height: 4000px
+
+footer
+    #links-footer
+        div
+            flex-direction: column
+            h2
+                text-align: center
+

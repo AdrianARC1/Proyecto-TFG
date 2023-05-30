@@ -1,0 +1,97 @@
+#principal-error
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: url('../images/abstract-neon-background-with-glitch-effect-free-vector.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50% 50%
+    #error-principal
+        width: 80%
+        height: 80%
+        background: white
+        border-radius: 10px
+        display: flex
+        #div-error
+            width: 120%
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        #info-error
+            padding: 40px 
+            padding-left: 60px
+            height: 100%
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            img
+                width: 60%
+            p
+                width: 80%
+                font-size: 30px
+            a
+                text-decoration: none
+                .glitch 
+                    font-size: 30px
+                    font-weight: bold
+                    text-transform: uppercase
+                    position: relative
+                    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,                        0.025em 0.04em 0 #fffc00
+                    animation: glitch 725ms infinite
+
+
+                    span 
+                        position: absolute
+                        top: 0
+                        left: 0
+
+
+                        &:first-child 
+                            animation: glitch 500ms infinite
+                            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%)
+                            transform: translate(-0.04em, -0.03em)
+                            opacity: 0.75
+
+
+                        &:last-child 
+                            animation: glitch 375ms infinite
+                            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%)
+                            transform: translate(0.04em, 0.03em)
+                            opacity: 0.75
+
+
+@keyframes glitch 
+    0% 
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,    0.025em 0.04em 0 #fffc00
+
+    15% 
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,    0.025em 0.04em 0 #fffc00
+
+    16% 
+        text-shadow: -0.05em -0.025em 0 rgb(54 140 201), 0.025em 0.035em 0 rgb(140 84 142),    -0.05em -0.05em 0 rgba(255, 0, 0, 0.75)
+
+    49% 
+        text-shadow: -0.05em -0.025em 0 rgb(54 140 201), 0.025em 0.035em 0 rgb(140 84 142),    -0.05em -0.05em 0 rgba(255, 0, 0, 0.75)
+
+    50% 
+        text-shadow: 0.05em 0.035em 0 rgb(54 140 201), 0.03em 0 0 rgb(140 84 142),    0 -0.04em 0 rgba(255, 0, 0, 0.75)
+
+    99% 
+        text-shadow: 0.05em 0.035em 0 rgb(54 140 201), 0.03em 0 0 rgb(140 84 142),    0 -0.04em 0 rgba(255, 0, 0, 0.75)
+
+    100% 
+        text-shadow: -0.05em 0 0 rgb(54 140 201), -0.025em -0.04em 0 rgb(140 84 142),    -0.04em -0.025em 0 rgba(255, 0, 0, 0.75)
+
+// text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75)
+
+@media only screen and (max-width: 1024px)
+    #principal-error
+        #error-principal
+            #info-error
+                align-items: center
+                text-align: center
+            #div-error
+                display: none

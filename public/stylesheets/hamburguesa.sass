@@ -1,0 +1,61 @@
+nav
+    background: #3498db
+    height: 82px
+    width: 100%
+    display: none
+    #check
+        display: none
+    .checkbtn
+        font-size: 30px
+        color: #fff
+        float: right
+        line-height: 80px
+        margin-right: 40px
+        cursor: pointer
+        display: none
+    .caja-logo
+        .logo
+            width: 150px
+
+    ul
+        float: right
+        margin-right: 20px
+
+        li
+            display: inline-block
+            line-height: 20px
+            margin: 0 5px
+
+            a
+                color: white
+                font-size: 20px
+                padding: 7px 13px
+                border-radius: 3px
+
+@media only screen and (max-width: 800px)
+    nav
+        display: block
+        z-index: 1
+        .checkbtn 
+            display: block 
+        #check:checked ~ ul 
+            left: 0
+        ul 
+            position: fixed 
+            width: 100% 
+            height: 100vh 
+            background: black 
+            top: 80px 
+            left: -100% 
+            text-align: center 
+            transition: .5s
+
+            li 
+                display: block 
+                margin: 10px 0 
+                line-height: 90px 
+
+                a 
+                    font-size: 20px 
+
+            

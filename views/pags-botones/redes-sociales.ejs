@@ -8,8 +8,10 @@
     <title>QR Arc</title>
   </head>
   <body>
+    <%- include('../partials/navegacion') %>
+    <%- include('../partials/hamburguesa') %>
     <h1>Codigo QR para redes sociales.</h1>
-    <form action="/generate-qr/redes-sociales" method="post">
+    <form action="/generate-qr/redes" method="post">
       <label for="url">
         <input type="text" name="url" required>
         <button type="submit">Generar QR</button>

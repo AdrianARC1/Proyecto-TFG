@@ -32,12 +32,12 @@ header #links-header {
 header #links-header div {
   display: flex;
   justify-content: space-around;
-  width: 20%;
+  width: 30%;
 }
 header #links-header #bib-help {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 70%;
 }
 header #links-header #bib-help a {
   color: #f2f2f2;
@@ -77,6 +77,7 @@ header a img {
 }
 
 #principal {
+  padding-top: 30px;
   height: auto;
   padding-bottom: 200px;
   background-repeat: repeat;
@@ -84,7 +85,7 @@ header a img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #3498db;
+  background: url("/images/abstract-neon-background-with-glitch-effect-free-vector.jpg");
 }
 #principal #todos-codigosqr {
   width: 80%;
@@ -134,6 +135,7 @@ header a img {
 }
 #principal #ejemplos-codigosqr #ejemplos-normales, #principal #todos-codigosqr #ejemplos-normales {
   margin-bottom: 30px;
+  overflow: scroll;
 }
 #principal #ejemplos-codigosqr #ejemplos-custom, #principal #ejemplos-codigosqr #ejemplos-normales, #principal #todos-codigosqr #ejemplos-custom, #principal #todos-codigosqr #ejemplos-normales {
   height: 100%;
@@ -326,4 +328,41 @@ footer #links-footer div {
   width: 70%;
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1024px) {
+  #principal .info-bots #ejemplos-normales, #principal #ejemplos-codigosqr #ejemplos-normales {
+    overflow: scroll;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+}
+@media screen and (max-width: 414px) {
+  #principal .info-bots, #principal #ejemplos-codigosqr {
+    text-align: center;
+    width: 90%;
+  }
+  #principal .info-bots #frases, #principal #ejemplos-codigosqr #frases {
+    width: 100%;
+  }
+  #principal .info-bots #frases h1, #principal #ejemplos-codigosqr #frases h1 {
+    font-size: 26px;
+    width: 100%;
+  }
+  #principal .info-bots #frases p, #principal #ejemplos-codigosqr #frases p {
+    width: 100%;
+    font-size: 15px;
+  }
+  #principal .info-bots #ejemplos-normales, #principal #ejemplos-codigosqr #ejemplos-normales {
+    text-align: center;
+  }
+  footer #links-footer div {
+    flex-direction: column;
+  }
+  footer #links-footer div h2 {
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -10,11 +10,12 @@
   </head>
   <body>
     <%- include('../partials/navegacion') %>
+    <%- include('../partials/hamburguesa') %>
     <section id="principal-texto">
       <form action="/generate-qr/vcard" method="post">
         <div class="codigo-generar">
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" required placeholder="Nombre de red">
+            <input type="text" name="nombre" id="nombre" required placeholder="Nombre">
   
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" class="inputTextoVistas"  id="password" required placeholder="Apellido">

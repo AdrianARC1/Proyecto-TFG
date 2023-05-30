@@ -10,10 +10,11 @@
   </head>
   <body>
     <%- include('../partials/navegacion') %>
+    <%- include('../partials/hamburguesa') %>
     <section id="principal-texto">
       <form action="/generate-qr/sms" method="post">
         <div class="codigo-generar">
-          <label for="numeroTel">Correo:</label>
+          <label for="numeroTel">Numero de telefono:</label>
           <input type="tel" name="numeroTel" id="numeroTel" required placeholder="Numero de telefono">
 
           <label for="mensaje">Mensaje:</label>

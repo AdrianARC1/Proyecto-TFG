@@ -9,6 +9,8 @@
   </head>
   <body>
     <%- include('partials/navegacion') %>
+    <%- include('partials/hamburguesa') %>
+    
     <section id="principal">
       
       <div class="info-bots">
@@ -25,8 +27,9 @@
       <div id="ejemplos-codigosqr" class="info-codigos">
         <h1>Información</h1>
         <p>¡Genera códigos QR personalizados con la mayor calidad posible!</p>
+        <h1>Codigos QR normales hechos:</h1>
+
         <div id="ejemplos-normales">
-          <h1>Codigos QR normales hechos:</h1>
             <div class="div-codigosqr">
               <% qrnormales.forEach(item => { %>
                 <img src="<%= item.codigoqrURL %>" draggable="false" alt="">

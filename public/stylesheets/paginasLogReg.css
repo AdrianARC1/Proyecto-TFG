@@ -109,4 +109,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+}
+
+#principal-signin .form-signin button, #principal-signup .form-signin button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #principal-signin .form-signin, #principal-signup .form-signin {
+    width: 100%;
+  }
+  #principal-signin #segunda-parte-signin, #principal-signup #segunda-parte-signin {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer #links-footer div {
+    flex-direction: column;
+  }
+  footer #links-footer div h2 {
+    text-align: center;
+  }
 }/*# sourceMappingURL=paginasLogReg.css.map */
