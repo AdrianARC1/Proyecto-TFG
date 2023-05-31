@@ -272,7 +272,9 @@ body
         .codigo-generar
             label
                 text-align: center
+                width: 100%
         .todas-opciones
+            width: 100%
             h2,h1
                 text-align: center
             .div-opciones
@@ -293,8 +295,10 @@ body
                         text-align: center
                         margin: 10px 0
             .opcionBody,.opcionEye,.opcionEyeBall
+                .div-reducido
+                    transition: 2s ease
                 .div-expandido
-                    max-height: 4000px
+                    max-height: 600px
 
 footer
     #links-footer
@@ -303,3 +307,12 @@ footer
             h2
                 text-align: center
 
+@media only screen and (max-width: 768px)
+#principal-texto, #principal-qr
+    form
+        .todas-opciones
+            .opcionBody,.opcionEye,.opcionEyeBall
+                .div-reducido
+                    transition: 4s ease
+                .div-expandido
+                    max-height: 3000px

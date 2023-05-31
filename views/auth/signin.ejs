@@ -12,11 +12,10 @@
   <body>
     <%- include('../partials/navegacion') %>
     <%- include('../partials/hamburguesa') %>
-<%- include('../partials/hamburguesa') %>
     <section id="principal-signin" class="pags-logreg">
       <div class="form-signin">
-        <%= message %>
         <form action="/signin" method="POST">
+          <p id="mensaje"><%= message %></p>
           <h1>Login</h1>
           <p>¿No tienes cuenta?<a href="/signup"> ¡Registrate gratis!</a></p>
           <div id="inputs">

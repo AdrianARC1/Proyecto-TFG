@@ -100,6 +100,25 @@ header a img {
   padding: 30px;
   padding-bottom: 60px;
 }
+#principal #todos-codigosqr .div-codigosqr #length0 a {
+  color: black;
+  text-decoration: none;
+}
+#principal #todos-codigosqr .div-codigosqr #length0 a .custom {
+  color: #ffffff;
+  background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+  padding: 30px 40px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 0 0 0 0;
+  border-radius: 10px;
+  transition: 1s;
+  font-size: 22px;
+}
+#principal #todos-codigosqr .div-codigosqr #length0 a .custom:active {
+  transform: scale(0.95);
+  transition: 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 #principal #todos-codigosqr .div-codigosqr .imagenes-like-dislke #iconos {
   align-items: center;
   justify-content: space-evenly;

@@ -8,6 +8,13 @@
   justify-content: flex-end;
   height: 40%;
 }
+#principal-signin .form-signin form #mensaje {
+  padding: 10px 80px;
+  background: red;
+  border-radius: 10px;
+  border: 1px solid;
+  color: white;
+}
 #principal-signin .form-signin form #inputs {
   height: 30%;
 }
