@@ -3,38 +3,30 @@ const { isLoggedIn,isNotLoggedIn } = require('../config/auth');
 const router = express.Router();
 const passport = require('passport')
 
-/* GET users listing. */
-router.get('/signup', isNotLoggedIn, (req, res, next) => {
-  res.render('auth/signup');
-});
-
+// Autenticación de registro utilizando passport
 router.post('/signup', isNotLoggedIn, passport.authenticate('local.signup', {
   successRedirect: '/',
   failureRedirect: '/signup',
   failureFlash: true
 }))
 
-router.get('/signin', isNotLoggedIn, (req, res) => {
-  res.render('auth/signin')
-})
 
+// Autenticación de inicio de sesión utilizando passport
 router.post('/signin', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local.signin', {
-    successRedirect: '/',
-    failureRedirect: '/signin',
-      failureFlash: true
+    successRedirect: '/', //Redirige a la pagina principal si es válido
+    failureRedirect: '/signin', // Si no, vuelve otra vez a signin
+      failureFlash: true // Habilita el mensaje de error flash para mostrar mensajes de error en la página de inicio de sesión
   })(req, res, next)
 })
 
-router.get('/tus-qr', isLoggedIn, (req, res) => {
-  res.render('partials/tus-qr')
-})
 
+// Funcion de logout para cerrar la sesión
 router.get('/logout', (req, res) => {  
   req.logOut(function(err){
     if (err) return next(err)
   })  
-  res.redirect('/signin')
+  res.redirect('/signin') // Redirigirlo a la página de login
 })
 
 module.exports = router;
