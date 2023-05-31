@@ -7,7 +7,7 @@ require('dotenv').config()
 const flash =require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
-const { database } = require('./keys')
+const { database_desarrollo } = require('./keys')
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
 
@@ -27,7 +27,7 @@ app.use(session({
   secret: 'tfgsession',
   resave: false,
   saveUninitialized: false,
-  store: new mysqlStore(database)
+  store: new mysqlStore(database_desarrollo)
 }))
 
 app.use(flash())
