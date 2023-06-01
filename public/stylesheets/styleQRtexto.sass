@@ -1,3 +1,19 @@
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin flexCenterColumn
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+@mixin flexVaria($content)
+  display: flex
+  justify-content: $content
+  align-items: center
+
 *
     margin: 0
     padding: 0
@@ -35,20 +51,15 @@ body
     #textos
         margin-top: 50px
         height: 20vh
-        display: flex
+        @include flexVaria(space-around)
         flex-direction: column
-        justify-content: space-around
-        align-items: center
         background: white
         h1,p
             text-align: center
             width: 50%
         
 #principal-texto, #principal-qr
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
+    @include flexCenterColumn
     background: #3498db
     #anclas
         height: auto
@@ -59,9 +70,7 @@ body
         z-index: 1
         top: 0px
         width: 70%
-        display: flex
-        align-items: center
-        justify-content: space-around
+        @include flexVaria(space-around)
         border-radius: 0 0 10px 10px
         background: #145c97
         a
@@ -83,10 +92,7 @@ body
     .codigo-generar
         height: auto
         width: 70%
-        display: flex
-        align-items: center
-        justify-content: center
-        flex-direction: column
+        @include flexCenterColumn
         margin-bottom: 50px
         h1
             font-size: 40px
@@ -96,10 +102,8 @@ body
             margin: 20px
     form
         padding-bottom: 30px
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
+        @include flexCenterColumn
+
         width: 80%
         input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="url"], input[type="number"]
             padding: 20px
@@ -202,9 +206,7 @@ body
                     max-height: 600px
                     
                 .forma-cuerpo,.forma-eye,.forma-eyeBall
-                    display: flex
-                    justify-content: center
-                    align-items: center
+                    @include flexCenter
                     flex-wrap: wrap
                     .opcion-label
                         display: inline-block
@@ -291,10 +293,7 @@ body
                     width: 100%
             .colores-qr
                 .div-colores
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    align-items: center
+                    @include flexCenterColumn
                     label
                         text-align: center
                         margin: 10px 0
@@ -303,13 +302,6 @@ body
                     transition: 2s ease
                 .div-expandido
                     max-height: 600px
-
-// footer
-//     #links-footer
-//         div
-//             flex-direction: column
-//             h2
-//                 text-align: center
 
 @media only screen and (max-width: 768px)
 #principal-texto, #principal-qr

@@ -45,7 +45,7 @@ header #links-header #bib-help a {
 header #links-header #bib-help a .custom {
   color: #ffffff;
   background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
-  padding: 20px 30px;
+  padding: 20px 40px;
   border: none;
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
   border-radius: 10px;
@@ -77,14 +77,14 @@ header a img {
 }
 
 #principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 30px;
   height: auto;
   padding-bottom: 200px;
   background-repeat: repeat;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: url("/images/abstract-neon-background-with-glitch-effect-free-vector.jpg");
 }
 #principal #todos-codigosqr {
@@ -92,8 +92,8 @@ header a img {
   text-align: center;
 }
 #principal #todos-codigosqr .div-codigosqr {
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -107,7 +107,7 @@ header a img {
 #principal #todos-codigosqr .div-codigosqr #length0 a .custom {
   color: #ffffff;
   background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
-  padding: 30px 40px;
+  padding: 20px 40px;
   border: none;
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
   border-radius: 10px;
@@ -226,9 +226,9 @@ header a img {
 }
 #principal .info-bots #frases .custom {
   font-family: Bebas Neue, sans-serif;
-  color: #fff;
+  color: #ffffff;
   background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
-  padding: 20px 50px;
+  padding: 20px 40px;
   border: none;
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
   border-radius: 10px;
@@ -350,6 +350,9 @@ footer #links-footer div {
 }
 
 @media screen and (max-width: 1024px) {
+  #principal .info-bots {
+    width: 90%;
+  }
   #principal .info-bots #ejemplos-normales, #principal #ejemplos-codigosqr #ejemplos-normales {
     overflow: scroll;
   }

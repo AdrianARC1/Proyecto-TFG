@@ -23,6 +23,9 @@ nav ul {
   float: right;
   margin-right: 20px;
 }
+nav ul:active + a, nav ul button {
+  display: none;
+}
 nav ul li {
   display: inline-block;
   line-height: 20px;

@@ -16,7 +16,7 @@ header {
 }
 header #links-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 80%;
 }
@@ -82,7 +82,7 @@ header a img {
   flex-direction: column;
   height: 90%;
   border-radius: 20px;
-  width: 50%;
+  width: 70%;
   background: white;
 }
 #prin-qrcustom #div-qrcustom img {
@@ -97,13 +97,15 @@ header a img {
 }
 #prin-qrcustom #div-qrcustom #textos h1 {
   margin-bottom: 40px;
+  font-size: 30px;
 }
 #prin-qrcustom #div-qrcustom #textos h1, #prin-qrcustom #div-qrcustom #textos p {
   width: 60%;
   text-align: center;
 }
 #prin-qrcustom #div-qrcustom #textos p {
-  font-size: 18px;
+  font-size: 24px;
+  width: 70%;
 }
 #prin-qrcustom #div-qrcustom h2 {
   font-size: 30px;
@@ -133,6 +135,23 @@ header a img {
   background: #081b57;
 }
 
+@media only screen and (max-width: 1366px) {
+  #prin-qrcustom #div-qrcustom img {
+    width: 200px;
+  }
+  #prin-qrcustom #div-qrcustom h2 {
+    width: 100%;
+    font-size: 24px;
+  }
+  #prin-qrcustom #div-qrcustom #textos h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  #prin-qrcustom #div-qrcustom #textos p {
+    font-size: 16px;
+    width: 70%;
+  }
+}
 @media only screen and (max-width: 768px) {
   footer #links-footer div {
     flex-direction: column;
@@ -140,6 +159,11 @@ header a img {
   footer #links-footer div h2 {
     text-align: center;
   }
+  #prin-qrcustom #div-qrcustom #textos p {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
   #prin-qrcustom #div-qrcustom {
     width: 90%;
   }
@@ -148,13 +172,15 @@ header a img {
   }
   #prin-qrcustom #div-qrcustom h2 {
     width: 100%;
-    font-size: 18px;
+    font-size: 22px;
   }
   #prin-qrcustom #div-qrcustom #textos h1 {
-    font-size: 16px;
+    font-size: 24px;
     margin-bottom: 20px;
+    width: 90%;
   }
   #prin-qrcustom #div-qrcustom #textos p {
-    display: none;
+    font-size: 16px;
+    width: 70%;
   }
 }/*# sourceMappingURL=qrcustom.css.map */

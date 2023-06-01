@@ -1,3 +1,14 @@
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin flexVaria($content)
+  display: flex
+  justify-content: $content
+  align-items: center
+
+
 *
     margin: 0
     padding: 0
@@ -11,9 +22,7 @@ header
     background: #3498db
     color: white
     #links-header
-        display: flex
-        justify-content: flex-end
-        align-items: center
+        @include flexCenter
         width: 80%
         div
             display: flex
@@ -57,35 +66,31 @@ header
 
 #prin-qrcustom
     height: 90vh
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flexCenter
     text-align: center
     background: url('../images/abstract-neon-background-with-glitch-effect-free-vector.jpg')
     #div-qrcustom
-        display: flex
-        justify-content: space-evenly
-        align-items: center
+        @include flexVaria(space-evenly)
         flex-direction: column
         height: 90%
         border-radius: 20px 
-        width: 50%
+        width: 70%
         background: white
         img
             width: 250px
             border: 1px solid
         #textos
-            display: flex
-            justify-content: center
-            align-items: center
+            @include flexCenter
             flex-direction: column
             h1
                 margin-bottom: 40px
+                font-size: 30px
             h1,p
                 width: 60%
                 text-align: center
             p
-                font-size: 18px
+                font-size: 24px
+                width: 70%
         h2
             font-size: 30px
         a
@@ -109,6 +114,22 @@ header
                 font-size: 30px
                 background: #081b57
 
+@media only screen and ( max-width: 1366px )
+    
+     #prin-qrcustom
+        #div-qrcustom
+            img
+                width: 200px
+            h2
+                width: 100%
+                font-size: 24px
+            #textos
+                h1
+                    font-size: 24px
+                    margin-bottom: 20px
+                p
+                    font-size: 16px
+                    width: 70%
 @media only screen and ( max-width: 768px )
     footer
         #links-footer
@@ -118,15 +139,24 @@ header
                     text-align: center
     #prin-qrcustom
         #div-qrcustom
+            #textos
+                p
+                    display: none
+
+@media only screen and ( max-width: 768px )
+    #prin-qrcustom
+        #div-qrcustom
             width: 90%
             img
                 width: 200px
             h2
                 width: 100%
-                font-size: 18px
+                font-size: 22px
             #textos
                 h1
-                    font-size: 16px
+                    font-size: 24px
                     margin-bottom: 20px
+                    width: 90%
                 p
-                    display: none
+                    font-size: 16px
+                    width: 70%

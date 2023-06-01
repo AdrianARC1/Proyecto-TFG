@@ -46,9 +46,9 @@ body {
   margin-top: 50px;
   height: 20vh;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   background: white;
 }
 #principal-qr #textos h1, #principal-qr #textos p {
@@ -58,9 +58,9 @@ body {
 
 #principal-texto, #principal-qr {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #3498db;
 }
 #principal-texto #anclas, #principal-qr #anclas {
@@ -73,8 +73,8 @@ body {
   top: 0px;
   width: 70%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
   border-radius: 0 0 10px 10px;
   background: #145c97;
 }
@@ -100,8 +100,8 @@ body {
   height: auto;
   width: 70%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
 }
@@ -117,9 +117,9 @@ body {
 #principal-texto form, #principal-qr form {
   padding-bottom: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 80%;
 }
 #principal-texto form input[type=text], #principal-texto form input[type=password], #principal-texto form input[type=tel], #principal-texto form input[type=email], #principal-texto form input[type=url], #principal-texto form input[type=number], #principal-qr form input[type=text], #principal-qr form input[type=password], #principal-qr form input[type=tel], #principal-qr form input[type=email], #principal-qr form input[type=url], #principal-qr form input[type=number] {
@@ -332,9 +332,9 @@ body {
 }
 #principal-texto form .todas-opciones .colores-qr .div-colores {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #principal-texto form .todas-opciones .colores-qr .div-colores label {
   text-align: center;

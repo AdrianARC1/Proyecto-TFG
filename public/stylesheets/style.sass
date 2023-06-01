@@ -1,7 +1,27 @@
-$color-primario: #3498db
-$color-secundario: #ffffff
-$color-primario-hover: #2980b9
-$color-secundario-hover: #f2f2f2
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin flexCenterColumn($column)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $column
+
+@mixin flexVaria($content)
+  display: flex
+  justify-content: $content
+  align-items: center
+
+@mixin botonCustom
+    color: #ffffff
+    background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
+    padding: 20px 40px
+    border: none
+    box-shadow: rgb(0,0,0) 0 0 0 0
+    border-radius: 10px
+    transition: 1s
 *
     margin: 0
     padding: 0
@@ -22,9 +42,7 @@ header
     background: #3498db
     color: white
     #links-header
-        display: flex
-        justify-content: flex-end
-        align-items: center
+        @include flexVaria(flex-end)
         width: 80%
         div
             display: flex
@@ -37,13 +55,8 @@ header
             a
                 color: #f2f2f2
                 .custom
-                    color: #ffffff
-                    background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
-                    padding: 20px 30px
-                    border: none
-                    box-shadow: rgb(0,0,0) 0 0 0 0
-                    border-radius: 10px
-                    transition: 1s
+                    @include botonCustom
+                    
                     &:active
                         transform: scale(0.95)
                         transition: 0.4s
@@ -66,24 +79,19 @@ header
     display: flex
     justify-content: center
 #principal
+    @include flexCenter
     padding-top: 30px
     height: auto
     padding-bottom: 200px
-    // background: url("/images/webb-dark.png") 
     background-repeat: repeat
-    display: flex
     flex-direction: column
-    justify-content: center
-    align-items: center
     background: url('/images/abstract-neon-background-with-glitch-effect-free-vector.jpg')
     #todos-codigosqr
         width: 80%
         text-align: center
         .div-codigosqr
-            display: flex
             flex-wrap: wrap
-            justify-content: center
-            align-items: center
+            @include flexCenter
             gap: 30px
             padding: 30px
             padding-bottom: 60px
@@ -92,14 +100,9 @@ header
                     color: black
                     text-decoration: none
                     .custom
-                        color: #ffffff
-                        background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
-                        padding: 30px 40px
-                        border: none
-                        box-shadow: rgb(0,0,0) 0 0 0 0
-                        border-radius: 10px
-                        transition: 1s
+                        @include botonCustom
                         font-size: 22px
+                            
                         &:active
                             transform: scale(0.95)
                             transition: 0.4s
@@ -198,17 +201,11 @@ header
                 text-align: center
             .custom
                 font-family: Bebas Neue,sans-serif
-                color: #fff
-                background: linear-gradient(90deg,#0066CC 0%,#c500cc 100%)
-                padding: 20px 50px
-                border: none
-                box-shadow: rgb(0,0,0) 0 0 0 0
-                border-radius: 10px
-                transition: 1s
+                @include botonCustom
                 margin-top: 40px
 
                 &:hover
-                    background-color: $color-secundario-hover
+                    background-color: #f2f2f2
 
                 &:active
                     transform: scale(0.95)
@@ -307,6 +304,8 @@ footer
 
 @media screen and (max-width: 1024px)
     #principal
+        .info-bots
+            width: 90%
         .info-bots, #ejemplos-codigosqr
             #ejemplos-normales
                 overflow: scroll

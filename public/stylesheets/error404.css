@@ -102,4 +102,26 @@
   #principal-error #error-principal #div-error {
     display: none;
   }
+}
+@media only screen and (max-width: 414px) {
+  #principal-error #error-principal {
+    width: 90%;
+  }
+  #principal-error #error-principal #info-error {
+    width: 100%;
+  }
+  #principal-error #error-principal #info-error p {
+    width: 80%;
+  }
+  #principal-error #error-principal #info-error img {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #principal-error #error-principal #info-error p {
+    font-size: 20px;
+  }
+  #principal-error #error-principal #info-error img {
+    width: 150px;
+  }
 }/*# sourceMappingURL=error404.css.map */
