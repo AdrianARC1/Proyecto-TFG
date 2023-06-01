@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('partials/links') %>
+    <link rel="stylesheet" href="/stylesheets/qrcustom.css">
+    <link rel="stylesheet" href="/stylesheets/hamburguesa.css">
     <title>QR Arc</title>
   </head>
   <body>
     <%- include('partials/navegacion') %>
     <%- include('partials/hamburguesa') %>
-    <section id="principal-qr">
-        <div id="textos">
+    <section id="prin-qrcustom">
+        <div id="div-qrcustom">
+          <div id="textos">
             <h1>¡Gracias por utilizar nuestro servicio para generar tu código QR personalizado! </h1>
             <p>Esperamos que hayas tenido una experiencia satisfactoria. Si necesitas generar más códigos QR en el futuro o tienes alguna otra necesidad relacionada con la generación de códigos, ¡estaremos encantados de ayudarte nuevamente! Tu satisfacción es nuestra prioridad, y estamos comprometidos a brindarte un servicio rápido, confiable y de alta calidad.</p>
         </div>
         <h2>Aqui tienes tu codigo QR de: <%= tipoQR %></h2>
         <img src="<%= imageUrl %>" alt="Código QR">
-        <a href="/descargar-qr">
-            <button>Descargar imagen</button>
-        </a>
+        
+        <a href="/download-qr?imageUrl=<%= imageUrl %>" class="btn btn-primary">Descargar código QR</a>
+
+        
+        </div>
     </section>
     <%- include('partials/footer') %>
 
@@ -28,15 +32,11 @@
 
 
 <script>
-    function descargarImagen(imagenUrl) {
-      // Crear un elemento de enlace temporal
-      var link = document.createElement("a");
-      link.href = imagenUrl;
-      link.download = "nombre-del-archivo.png"; // Nombre del archivo descargado
-  
-      // Simular un clic en el enlace para iniciar la descarga
-      link.click();
-    }
+  const downloadButton = document.getElementById('downloadButton');
+
+  downloadButton.addEventListener('click', () => {
+  window.location.href = '/download-qr';
+});
 </script>
 
 </body>

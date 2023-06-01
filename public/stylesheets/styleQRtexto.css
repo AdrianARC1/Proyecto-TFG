@@ -33,6 +33,11 @@ body {
   background: red;
 }
 
+.qrcustom-page {
+  display: none;
+  background: url("../images/abstract-neon-background-with-glitch-effect-free-vector.jpg") !important;
+}
+
 #principal-qr img {
   margin: 60px;
   width: 200px;
@@ -44,6 +49,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background: white;
 }
 #principal-qr #textos h1, #principal-qr #textos p {
   text-align: center;
@@ -290,62 +296,55 @@ body {
   width: 100%;
 }
 
-#principal-texto #anclas, #principal-qr #anclas {
+#principal-texto #anclas {
   display: none;
 }
-#principal-texto form h1, #principal-qr form h1 {
+#principal-texto form h1 {
   text-align: center;
 }
-#principal-texto form .colores-qr, #principal-qr form .colores-qr {
+#principal-texto form .colores-qr {
   width: 100%;
 }
-#principal-texto form .colores-qr .div-colores, #principal-qr form .colores-qr .div-colores {
+#principal-texto form .colores-qr .div-colores {
   width: 100%;
   flex-direction: column;
 }
-#principal-texto form .codigo-generar label, #principal-qr form .codigo-generar label {
+#principal-texto form .codigo-generar label {
   text-align: center;
   width: 100%;
 }
-#principal-texto form .todas-opciones, #principal-qr form .todas-opciones {
+#principal-texto form .todas-opciones {
   width: 100%;
 }
-#principal-texto form .todas-opciones h2, #principal-texto form .todas-opciones h1, #principal-qr form .todas-opciones h2, #principal-qr form .todas-opciones h1 {
+#principal-texto form .todas-opciones h2, #principal-texto form .todas-opciones h1 {
   text-align: center;
 }
-#principal-texto form .todas-opciones .div-opciones, #principal-qr form .todas-opciones .div-opciones {
+#principal-texto form .todas-opciones .div-opciones {
   margin-top: 30px;
   margin: 10px;
 }
-#principal-texto form .todas-opciones .logo-qr, #principal-qr form .todas-opciones .logo-qr {
+#principal-texto form .todas-opciones .logo-qr {
   width: 100%;
 }
-#principal-texto form .todas-opciones .logo-qr label, #principal-qr form .todas-opciones .logo-qr label {
+#principal-texto form .todas-opciones .logo-qr label {
   text-align: center;
   width: 100%;
 }
-#principal-texto form .todas-opciones .colores-qr .div-colores, #principal-qr form .todas-opciones .colores-qr .div-colores {
+#principal-texto form .todas-opciones .colores-qr .div-colores {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#principal-texto form .todas-opciones .colores-qr .div-colores label, #principal-qr form .todas-opciones .colores-qr .div-colores label {
+#principal-texto form .todas-opciones .colores-qr .div-colores label {
   text-align: center;
   margin: 10px 0;
 }
-#principal-texto form .todas-opciones .opcionBody .div-reducido, #principal-texto form .todas-opciones .opcionEye .div-reducido, #principal-texto form .todas-opciones .opcionEyeBall .div-reducido, #principal-qr form .todas-opciones .opcionBody .div-reducido, #principal-qr form .todas-opciones .opcionEye .div-reducido, #principal-qr form .todas-opciones .opcionEyeBall .div-reducido {
+#principal-texto form .todas-opciones .opcionBody .div-reducido, #principal-texto form .todas-opciones .opcionEye .div-reducido, #principal-texto form .todas-opciones .opcionEyeBall .div-reducido {
   transition: 2s ease;
 }
-#principal-texto form .todas-opciones .opcionBody .div-expandido, #principal-texto form .todas-opciones .opcionEye .div-expandido, #principal-texto form .todas-opciones .opcionEyeBall .div-expandido, #principal-qr form .todas-opciones .opcionBody .div-expandido, #principal-qr form .todas-opciones .opcionEye .div-expandido, #principal-qr form .todas-opciones .opcionEyeBall .div-expandido {
+#principal-texto form .todas-opciones .opcionBody .div-expandido, #principal-texto form .todas-opciones .opcionEye .div-expandido, #principal-texto form .todas-opciones .opcionEyeBall .div-expandido {
   max-height: 600px;
-}
-
-footer #links-footer div {
-  flex-direction: column;
-}
-footer #links-footer div h2 {
-  text-align: center;
 }
 
 #principal-texto form .todas-opciones .opcionBody .div-reducido, #principal-texto form .todas-opciones .opcionEye .div-reducido, #principal-texto form .todas-opciones .opcionEyeBall .div-reducido, #principal-qr form .todas-opciones .opcionBody .div-reducido, #principal-qr form .todas-opciones .opcionEye .div-reducido, #principal-qr form .todas-opciones .opcionEyeBall .div-reducido {

@@ -25,7 +25,9 @@ body
     background: grey
 .active
     background: red
-
+.qrcustom-page
+    display: none
+    background: url('../images/abstract-neon-background-with-glitch-effect-free-vector.jpg') !important
 #principal-qr
     img
         margin: 60px
@@ -37,6 +39,7 @@ body
         flex-direction: column
         justify-content: space-around
         align-items: center
+        background: white
         h1,p
             text-align: center
             width: 50%
@@ -257,8 +260,9 @@ body
             input, label
                 width: 100%
 
-@media only screen and (max-width: 1024px)
-#principal-texto, #principal-qr
+@media screen and ( max-width: 1024px)
+
+#principal-texto
     #anclas
         display: none
     form
@@ -300,12 +304,12 @@ body
                 .div-expandido
                     max-height: 600px
 
-footer
-    #links-footer
-        div
-            flex-direction: column
-            h2
-                text-align: center
+// footer
+//     #links-footer
+//         div
+//             flex-direction: column
+//             h2
+//                 text-align: center
 
 @media only screen and (max-width: 768px)
 #principal-texto, #principal-qr

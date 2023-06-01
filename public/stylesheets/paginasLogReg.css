@@ -15,6 +15,9 @@
   border: 1px solid;
   color: white;
 }
+#principal-signin .form-signin form #mensaje:empty {
+  display: none;
+}
 #principal-signin .form-signin form #inputs {
   height: 30%;
 }
