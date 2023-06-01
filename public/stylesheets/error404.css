@@ -1,9 +1,9 @@
 #principal-error {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background: url("../images/abstract-neon-background-with-glitch-effect-free-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,15 +58,11 @@
 }
 #principal-error #error-principal #info-error a .glitch span:first-child {
   animation: glitch 500ms infinite;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-          clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   transform: translate(-0.04em, -0.03em);
   opacity: 0.75;
 }
 #principal-error #error-principal #info-error a .glitch span:last-child {
   animation: glitch 375ms infinite;
-  -webkit-clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-          clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
   transform: translate(0.04em, 0.03em);
   opacity: 0.75;
 }
