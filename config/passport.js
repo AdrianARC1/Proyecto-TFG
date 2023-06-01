@@ -26,7 +26,7 @@ passport.use('local.signin', new LocalStrategy({ //Crea una estrategia para sign
             done(null,false,req.flash('message', 'Constraseña incorrecta')) // Llama a done para mostrar los mensajes corresponsientes
         }
     }else{
-        return done(null,false,req.flash('message', 'Usuario mal escrito')) // Llama a done para mostrar los mensajes corresponsientes
+        return done(null,false,req.flash('message', 'Error al intentar acceder')) // Llama a done para mostrar los mensajes corresponsientes
 
     }
 

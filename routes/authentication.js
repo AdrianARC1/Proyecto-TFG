@@ -3,12 +3,24 @@ const { isLoggedIn,isNotLoggedIn } = require('../config/auth');
 const router = express.Router();
 const passport = require('passport')
 
+// Ruta get signup
+router.get('/signup', function(req, res, next) {
+  res.render('auth/signup');
+});
+
+
 // Autenticación de registro utilizando passport
 router.post('/signup', isNotLoggedIn, passport.authenticate('local.signup', {
-  successRedirect: '/',
-  failureRedirect: '/signup',
-  failureFlash: true
+  successRedirect: '/', //Redirige a la pagina principal si es válido
+  failureRedirect: '/signup', // Si no, vuelve otra vez a signup
+  failureFlash: true // Habilita el mensaje de error flash para mostrar mensajes de error en la página de registro
 }))
+
+
+// Ruta get signin
+router.get('/signin', function(req, res, next) {
+  res.render('auth/signin');
+});
 
 
 // Autenticación de inicio de sesión utilizando passport
