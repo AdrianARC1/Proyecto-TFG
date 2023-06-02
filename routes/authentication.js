@@ -4,7 +4,7 @@ const router = express.Router();
 const passport = require('passport')
 
 // Ruta get signup
-router.get('/signup', function(req, res, next) {
+router.get('/signup', isNotLoggedIn, function(req, res, next) {
   res.render('auth/signup');
 });
 
@@ -18,7 +18,7 @@ router.post('/signup', isNotLoggedIn, passport.authenticate('local.signup', {
 
 
 // Ruta get signin
-router.get('/signin', function(req, res, next) {
+router.get('/signin', isNotLoggedIn, function(req, res, next) {
   res.render('auth/signin');
 });
 

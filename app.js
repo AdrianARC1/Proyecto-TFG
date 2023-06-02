@@ -9,10 +9,10 @@ require('dotenv').config()
 const flash =require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
-// const { database_produccion } = require('./keys') // Importa la configuración de la base de datos.
+// const { database_desarrollo } = require('./keys') // Importa la configuración de la base de datos.
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication'); // Importa las rutas para la autenticación.
-const { pool } = require('./database')
+const pool = require('./database')
 const mysqlStore = require('express-mysql-session')(session);  // Crea un almacén de sesión utilizando MySQL.
 
 const app = express();
@@ -31,7 +31,7 @@ app.use(session({
   secret: 'tfgsession',
   resave: false,
   saveUninitialized: false,
-  store: new mysqlStore(pool) // Almacena las sesiones en la base de datos MySQL.
+  store: new mysqlStore({},pool) // Almacena las sesiones en la base de datos MySQL.
 }))
 
 // Middlewares
