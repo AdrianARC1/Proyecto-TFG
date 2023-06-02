@@ -5,8 +5,7 @@ const passport = require('passport')
 
 // Ruta get signup
 router.get('/signup', function(req, res, next) {
-  const messageFlash = req.flash('message')
-  res.render('auth/signup', {message:messageFlash,});
+  res.render('auth/signup');
 });
 
 
@@ -20,8 +19,7 @@ router.post('/signup', isNotLoggedIn, passport.authenticate('local.signup', {
 
 // Ruta get signin
 router.get('/signin', function(req, res, next) {
-  const messageFlash = req.flash('message')
-  res.render('auth/signin', {message:messageFlash});
+  res.render('auth/signin');
 });
 
 

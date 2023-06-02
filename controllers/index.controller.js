@@ -10,7 +10,7 @@ module.exports={
           const [qrnormales] = await pool.query('SELECT * FROM codigosqr WHERE codigoqrURL IS NOT NULL AND opcionBody IS NULL OR opcionBody = "square" AND opcionEye IS NULL OR opcionEye = "frame0" AND opcionEyeBall IS NULL OR opcionEyeBall = "ball0" AND bgColor = "#f00000" or bgColor = "#ffffff" AND bodyColor = "#000000" LIMIT 3;');
           
 
-          res.render('index', {qrcustom, qrnormales, user: req.user });
+          res.render('index', {qrcustom, qrnormales});
       },
 
       getQrCustom:function(req, res, next) {
