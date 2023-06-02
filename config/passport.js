@@ -20,7 +20,7 @@ passport.use('local.signin', new LocalStrategy({ //Crea una estrategia para sign
         const user = rows[0] //Primer usuario encontrado
         const validPassword = encriptar.matchPassword(password, user.password) //Compara la contraseña con la contraseña encriptada
 
-        if(validPassword){
+        if(validPassword && user.username==username) {
             done(null, user, req.flash('success', 'Bienvenido ' + username)) // Llama a done para mostrar los mensajes corresponsientes
         }else{
             done(null,false,req.flash('message', 'Constraseña incorrecta')) // Llama a done para mostrar los mensajes corresponsientes
