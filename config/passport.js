@@ -64,29 +64,31 @@ passport.use('local.signup', new LocalStrategy({
         to: email,
         subject: 'Confirmación de registro',
         html: `
-        <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
             <title>Document</title>
         </head>
         <body>
-            <section id="principal-correo" style="width: 100%;height: auto;padding-bottom: 30px;display: flex;flex-direction: column;align-items: center;">
-                <div id="div-correo" style="background: #3498db;width: 40%;display: flex;flex-direction: column;text-align: start;padding: 100px;">
-                    <div id="logo" style="display: flex;justify-content: center;align-items: center;"><img src="/images/logo2.2.png" alt="" style="width: 200px;"></div>
-                    <h1 style="text-align: start;">Hola ${fullname},</h1><br>
-                    <p style="text-align: start;">gracias por registrarte en nuestro generador de QR's,<br>¡ahora podrás disfrutar de las características más interesantes!</p>
+            <section id="principal-correo" style="width: 100%; height: auto; padding-bottom: 40px; display: flex; flex-direction: column; align-items: center;">
+                <div id="div-correo" style="background: #b4b1b1; width: 25% display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 100px;">
+                    <div id="logo" style="display: flex;justify-content: center;align-items: center;"></div>
+                    <h1 style="text-align: center;">Hola ${fullname},</h1><br>
+                    <p style="text-align: center;">gracias por registrarte en nuestro generador de QR's,<br>¡ahora podrás disfrutar de las características más interesantes!</p>
                     <div id="imagen" style="width: 100%;display: flex;justify-content: center;align-items: center;margin-top: 100px;">
-                        <img src="http://api.qrcode-monkey.com/tmp/1febb5012dd79cf3f2f52b563807c35d.png" alt="" style="width: 200px;">
+                        <img draggable="false" src="http://api.qrcode-monkey.com/tmp/1febb5012dd79cf3f2f52b563807c35d.png" alt="" style="width: 200px;">
                     </div>
                 </div>
                 
             </section>
             <footer style="background: #2c2c2c;padding-bottom: 40px;color: #f2f2f2;">
         <div id="imagen" style="width: 100%;display: flex;justify-content: center;align-items: center;">
-            <a href="/"><img src="/images/logo2.2.png" alt="" style="width: 200px;"></a>
+            <a href="/"><img draggable="false" src="/images/logo2.2.png" alt="" style="width: 200px;"></a>
         </div>
         <div id="links-footer" style="display: flex;justify-content: center;align-items: center;">
             <div style="width: 70%;display: flex;justify-content: space-evenly;">

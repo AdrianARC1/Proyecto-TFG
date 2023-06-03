@@ -669,33 +669,25 @@ module.exports={
             res.render('codigosqr/nuevosqr', {resul_nuevosqr})
           },
 
-          getCodeDownload:(req, res) => {
-            const imageUrl = req.query.imageUrl; // URL de la imagen
-            const fileName = 'codigo_qr.png'; // Nombre del archivo descargado
+          getCodeDownload: async (req, res) => {
+            const { imageUrl } = req.query; // Obtiene la URL de la imagen desde la consulta
+            const fileName = 'codigo_qr.png'; // Nombre del archivo al descargarlo
           
-            axios({ // Peticion http a la url de la imagen
-              url: imageUrl,
-              responseType: 'stream' // Indica respuesta de flujo de datos
-            })
-              .then((response) => {
-                response.data.pipe(fs.createWriteStream(fileName)) // Crea un flujo de escritura en el archivo y escribe los datos de la respuesta en ese archivo
-                  .on('finish', () => {
-                    res.download(fileName, (err) => { // Descarga el archivo
-                      if (err) {
-                        console.error('Error al descargar la imagen:', err);
-                        res.render('error');
-                      }
-                      fs.unlinkSync(fileName); // Elimina el archivo descargado después de la descarga
-                    });
-                  })
-                  .on('error', (err) => {
-                    console.error('Error al descargar la imagen:', err);
-                    res.render('error');
+            try {
+              const { data } = await axios.get(imageUrl, { responseType: 'stream' }); // Realiza una solicitud HTTP para obtener la imagen
+              data.pipe(fs.createWriteStream(fileName)) // Crea un flujo de escritura y escribe los datos de la respuesta en el archivo
+                .on('finish', () => {
+                  res.download(fileName, (err) => { // Descarga el archivo
+                    if (err) { // Muestra un error si lo hay
+                      console.error('Error al descargar la imagen:', err); 
+                      return res.render('error');
+                    }
+                    fs.unlinkSync(fileName); // Elimina el archivo descargado del sistema de archivos después de la descarga
                   });
-              })
-              .catch((error) => {
-                console.error('Error al descargar la imagen:', error);
-                res.render('error', { error });
-              });
+                });
+            } catch (error) { // Captura un posible error de la solicitud HTTP
+              console.error('Error al descargar la imagen:', error);
+              res.render('error', { error });
+            }
           }
 }
