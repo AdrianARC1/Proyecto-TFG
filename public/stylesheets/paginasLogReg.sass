@@ -113,13 +113,40 @@
     #principal-signin, #principal-signup
         .form-signin
             width: 100%
+            form
+                button
+                    text-align: center
+                    margin-bottom: 30px
+                    width: 60%
+            
+    #principal-signin
+        .form-signin
+            form
+                h1
+                    margin: 20px 0
+                p
+                    margin-bottom: 20px
+                button
+                    margin-top: 20px
+                #div-imagen
+                    img
+                        display: flex
         #segunda-parte-signin
             display: none
-
-@media only screen and (max-width: 768px)
+    #principal-signup
+        .form-signin
+            form
+                h1
+                    margin: 20px 0
+                div
+                    img
+                        display: none
+        #segunda-parte-signin
+            display: none
     footer
         #links-footer
             div
                 flex-direction: column
                 h2
                     text-align: center
+@media only screen and (max-width: 768px)

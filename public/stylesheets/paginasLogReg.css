@@ -129,11 +129,35 @@
   #principal-signin .form-signin, #principal-signup .form-signin {
     width: 100%;
   }
-  #principal-signin #segunda-parte-signin, #principal-signup #segunda-parte-signin {
+  #principal-signin .form-signin form button, #principal-signup .form-signin form button {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 60%;
+  }
+  #principal-signin .form-signin form h1 {
+    margin: 20px 0;
+  }
+  #principal-signin .form-signin form p {
+    margin-bottom: 20px;
+  }
+  #principal-signin .form-signin form button {
+    margin-top: 20px;
+  }
+  #principal-signin .form-signin form #div-imagen img {
+    display: flex;
+  }
+  #principal-signin #segunda-parte-signin {
     display: none;
   }
-}
-@media only screen and (max-width: 768px) {
+  #principal-signup .form-signin form h1 {
+    margin: 20px 0;
+  }
+  #principal-signup .form-signin form div img {
+    display: none;
+  }
+  #principal-signup #segunda-parte-signin {
+    display: none;
+  }
   footer #links-footer div {
     flex-direction: column;
   }

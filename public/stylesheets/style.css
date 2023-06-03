@@ -97,11 +97,56 @@ header a img {
   padding-bottom: 200px;
   background-repeat: repeat;
   flex-direction: column;
-  background: url("/images/abstract-neon-background-with-glitch-effect-free-vector.jpg");
+  background: #3498db;
+  overflow: hidden;
+}
+#principal #imagenes-fondo-abs .imagenes-fondo {
+  position: absolute;
+}
+#principal #imagenes-fondo-abs .cirulo-clase {
+  width: 400px;
+  z-index: 0;
+}
+#principal #imagenes-fondo-abs #icono-qr {
+  transform: translate(-800px, 500px) rotate(-30deg);
+  width: 60px;
+}
+#principal #imagenes-fondo-abs #icono-qr2 {
+  transform: translate(800px, 1000px) rotate(-30deg);
+  width: 60px;
+}
+#principal #imagenes-fondo-abs #circulo {
+  right: 0;
+}
+#principal #imagenes-fondo-abs #circulo2 {
+  left: 0;
+  transform: translate(-20%, -80%);
+}
+#principal #imagenes-fondo-abs #circulo3 {
+  left: 0;
+  transform: translate(-50%, 200%);
+}
+#principal #imagenes-fondo-abs #circulo4 {
+  transform: translate(130%, 370%);
+}
+#principal #imagenes-fondo-abs .cruz-clase {
+  width: 60px;
+}
+#principal #imagenes-fondo-abs #cruz {
+  left: 140px;
+  top: 1700px;
+}
+#principal #imagenes-fondo-abs #cruz3 {
+  right: 1400px;
+}
+#principal #imagenes-fondo-abs #cruz4 {
+  right: 100px;
+  top: 800px;
 }
 #principal #todos-codigosqr {
   width: 80%;
   text-align: center;
+  z-index: 1;
 }
 #principal #todos-codigosqr .div-codigosqr {
   flex-wrap: wrap;
@@ -144,6 +189,9 @@ header a img {
 #principal #todos-codigosqr .div-codigosqr img {
   width: 200px;
   border: 1px solid;
+}
+#principal #ejemplos-codigosqr {
+  z-index: 1;
 }
 #principal #ejemplos-codigosqr, #principal #todos-codigosqr {
   width: 100%;
@@ -214,6 +262,7 @@ header a img {
   padding-bottom: 50px;
   margin-top: 50px;
   border-radius: 20px;
+  z-index: 1;
 }
 #principal .info-bots #frases {
   margin-top: 50px;
@@ -361,6 +410,14 @@ footer #links-footer div {
   justify-content: space-evenly;
 }
 
+@media screen and (max-width: 1900px) {
+  #principal #imagenes-fondo-abs #circulo4 {
+    display: none;
+  }
+  #principal #imagenes-fondo-abs #icono-qr2 {
+    display: none;
+  }
+}
 @media screen and (max-width: 1024px) {
   #principal .info-bots {
     width: 90%;
@@ -373,8 +430,14 @@ footer #links-footer div {
   header {
     display: none;
   }
+  #principal #imagenes-fondo-abs {
+    display: none;
+  }
 }
 @media screen and (max-width: 414px) {
+  #principal #imagenes-fondo-abs {
+    display: none;
+  }
   #principal .info-bots, #principal #ejemplos-codigosqr {
     text-align: center;
     width: 90%;

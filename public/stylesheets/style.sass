@@ -1,3 +1,38 @@
+@mixin decoracionIconos
+    #imagenes-fondo-abs
+        .imagenes-fondo
+            position: absolute
+        .cirulo-clase
+            width: 400px
+            z-index: 0
+        #icono-qr
+            transform: translate(-800px, 500px) rotate(-30deg)
+            width: 60px
+        #icono-qr2
+            transform: translate(800px, 1000px) rotate(-30deg)
+            width: 60px
+        #circulo
+            right: 0
+        #circulo2
+            left: 0
+            transform: translate(-20%, -80%)
+        #circulo3
+            left: 0
+            transform: translate(-50%, 200%)
+        #circulo4
+            transform: translate(130%, 370%)
+        .cruz-clase
+            width: 60px
+        #cruz
+            left: 140px
+            top: 1700px
+        #cruz3
+            right: 1400px
+        #cruz4
+            right: 100px
+            top: 800px
+
+
 @mixin flexCenter
   display: flex
   justify-content: center
@@ -41,6 +76,8 @@
         background-color: #00b3ff
         border-radius: 10px
   
+
+
 
 a
     text-decoration: none
@@ -98,10 +135,13 @@ header
     padding-bottom: 200px
     background-repeat: repeat
     flex-direction: column
-    background: url('/images/abstract-neon-background-with-glitch-effect-free-vector.jpg')
+    background: #3498db
+    overflow: hidden
+    @include decoracionIconos
     #todos-codigosqr
         width: 80%
         text-align: center
+        z-index: 1
         .div-codigosqr
             flex-wrap: wrap
             @include flexCenter
@@ -132,8 +172,9 @@ header
             img
                 width: 200px
                 border: 1px solid
+    #ejemplos-codigosqr
+        z-index: 1
     #ejemplos-codigosqr, #todos-codigosqr
-
         width: 100%
         display: flex
         flex-direction: column
@@ -194,6 +235,8 @@ header
         padding-bottom: 50px
         margin-top: 50px
         border-radius: 20px
+        z-index: 1
+
         #frases
             margin-top: 50px
             text-align: center
@@ -315,6 +358,14 @@ footer
             justify-content: space-evenly
 
 
+@media screen and (max-width: 1900px)
+    #principal
+        #imagenes-fondo-abs
+            #circulo4
+                display: none
+            #icono-qr2
+                display: none   
+
 @media screen and (max-width: 1024px)
     #principal
         .info-bots
@@ -326,9 +377,14 @@ footer
 @media screen and (max-width: 768px)
     header
         display: none
+    #principal
+        #imagenes-fondo-abs
+            display: none
 
 @media screen and ( max-width: 414px )
     #principal
+        #imagenes-fondo-abs
+            display: none
         .info-bots, #ejemplos-codigosqr
             text-align: center
             width: 90%

@@ -18,7 +18,7 @@
               <div class="div-codigosqr">
                 <% resul_masvotados.forEach(item => { %>
                   <div class="imagenes-like-dislke">
-                    <img src="<%= item.codigoqrURL %>" draggable="false" alt="">
+                    <img draggable="false" src="<%= item.codigoqrURL %>"  alt="">
                     <div id="iconos">
                       <a href="/like/<%= item.id %>"><i class="fa-regular fa-thumbs-up"></i><p><%= item.likes %></p></a>
                       <a href="/dislike/<%= item.id %>"><i class="fa-regular fa-thumbs-down"></i><p><%= item.dislikes %></p></a>
