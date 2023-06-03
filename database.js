@@ -12,13 +12,13 @@ const { database_desarrollo, database_produccion } = require('./keys') // Export
 let database_vacia
 
 // Si el NODE_ENV es producción, asignamos a la variable la base de datos de produccion
-if (process.env.NODE_ENV === "produccion") {
+if (process.env.NODE_ENV == "produccion") {
     database_vacia = database_produccion
-    console.log('Conectado a la base de datos de producción');
+    console.log('Conectado a la base de datos necesaria para desplegar');
 // Si el NODE_ENV es despliegue, asignamos a la variable la base de datos de despliegue
 } else{
     database_vacia = database_desarrollo
-    console.log('Conectado a la base de datos de despliegue');
+    console.log('Conectado a la base de datos de desarrollo');
 }
 
 // Creamos una variable para guardarle una pool de la bd correspondiente
