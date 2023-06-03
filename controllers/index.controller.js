@@ -24,7 +24,32 @@ module.exports={
       },
 
       getTusQR:async(req, res, next)=> {
-        const [codigos] = await pool.query('SELECT * FROM codigosqr WHERE user_id = ?', [req.user.id]) // Ruta donde aparecen los qr que haya creado un usuario LOGUEADO
+        const consulta = `
+        SELECT codigoqrURL, qr_tipo
+        FROM (
+            SELECT codigoqrURL, 'codigosqr' AS qr_tipo FROM codigosqr WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_geo' AS qr_tipo FROM codigosqr_geo WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_pdf' AS qr_tipo FROM codigosqr_pdf WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_redes' AS qr_tipo FROM codigosqr_redes WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_sms' AS qr_tipo FROM codigosqr_sms WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_tel' AS qr_tipo FROM codigosqr_tel WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_url' AS qr_tipo FROM codigosqr_url WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_vcard' AS qr_tipo FROM codigosqr_vcard WHERE user_id = ?
+            UNION ALL
+            SELECT codigoqrURL, 'codigosqr_wifi' AS qr_tipo FROM codigosqr_wifi WHERE user_id = ?
+        ) AS subconsulta
+        `;
+        const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
+
+        const [codigos] = await pool.query(consulta, params) // Ruta donde aparecen los qr que haya creado un usuario LOGUEADO
+        
         console.log(codigos)
         res.render('codigosqr/tusqr', {codigos})
       },
@@ -78,15 +103,15 @@ module.exports={
       
         try {
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
-          imageUrl = response.data.imageUrl; // Guardamos la url en una variable para usarla en las vistas .ejs
+          const imageUrl = response.data.imageUrl; // Guardamos la url en una variable para usarla en las vistas .ejs
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
-          res.render('qrcustom',{tipoQR: 'URL'});
+          res.render('qrcustom',{tipoQR: 'URL', imageUrl});
         } catch (error) {
           console.error('Error:', error);
           res.render('error', {error});
@@ -146,7 +171,7 @@ module.exports={
             
           }
           
-          res.render('qrcustom',{tipoQR: 'texto', imageUrl});
+          res.render('qrcustom',{tipoQR: 'texto'});
         } catch (error) {
           console.error('Error:', error);
           res.render('error', {error});
@@ -205,11 +230,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_wifi SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_wifi SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_wifi SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_wifi SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'wifi'});
         } catch (error) {
@@ -268,11 +293,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_tel SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_tel SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'telefono'});
         } catch (error) {
@@ -332,11 +357,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_location SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_location SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_geo SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_geo SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'geolocalización'});
         } catch (error) {
@@ -396,11 +421,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_sms SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_sms SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_sms SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_sms SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'SMS'});
         } catch (error) {
@@ -443,11 +468,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_url SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_redes SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_redes SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'redes sociales'});
         } catch (error) {
@@ -490,11 +515,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr_pdf SET codigoqrURL = ?, pdfUrl = ?', [imageUrl, pdfUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr_pdf SET codigoqrURL = ?, pdfUrl = ?', [imageUrl, pdfUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_pdf SET codigoqrURL = ?, codigoqrURL = ?', [imageUrl, pdfUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_pdf SET codigoqrURL = ?, codigoqrURL = ?', [imageUrl, pdfUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'PDF'});
         } catch (error) {
@@ -567,11 +592,11 @@ module.exports={
           const response = await apiClient.post('/qr/custom', qrConfig);  // Solicitud a la api para mandarle los datos
           imageUrl = response.data.imageUrl;
       
-          // if (req.user){
-          //   await pool.query('INSERT INTO codigosqr SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
-          // } else {
-          //   await pool.query('INSERT INTO codigosqr SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
-          // }
+          if (req.user){
+            await pool.query('INSERT INTO codigosqr_vcard SET ?, codigoqrURL = ?', [newCodeQR, imageUrl]); // Si está logueado, guarda los datos del codigo qr y le asigna la id al campo de la id del usuario
+          } else {
+            await pool.query('INSERT INTO codigosqr_vcard SET ?, codigoqrURL = ?', [req.body, imageUrl]); // Si no está logueado, inserta los datos sin asociarlo a ningún usuario
+          }
       
           res.render('qrcustom',{tipoQR: 'vCard'});
         } catch (error) {
@@ -633,10 +658,13 @@ module.exports={
           download: true,
           file: "png"
         };
+
+        const tableName = determineTableName(data);
+
         try {
           const response = await apiClient.post('/qr/custom', qrConfigEdit); // Le manda los datos a la peticion post y así poder cambiarlo
           imageUrl = response.data.imageUrl
-          await pool.query('UPDATE codigosqr SET ?, codigoqrURL = ? where id = ?', [editCodeQR, imageUrl, id]) // Actualizamos los valores
+          await pool.query(`UPDATE ${tableName} SET ?, codigoqrURL = ? WHERE id = ?`, [editCodeQR, imageUrl, id]);
       
         res.redirect('/tus-qr')
           } catch (error) {
