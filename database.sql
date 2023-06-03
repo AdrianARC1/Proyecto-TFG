@@ -16,6 +16,7 @@ CREATE TABLE `codigosqr` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 CREATE TABLE `codigosqr_url` (
@@ -32,6 +33,7 @@ CREATE TABLE `codigosqr_url` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 CREATE TABLE `codigosqr_redes` (
@@ -48,6 +50,7 @@ CREATE TABLE `codigosqr_redes` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 );
@@ -65,6 +68,7 @@ CREATE TABLE `codigosqr_tel` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 CREATE TABLE `codigosqr_pdf` (
@@ -81,6 +85,7 @@ CREATE TABLE `codigosqr_pdf` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 
@@ -102,6 +107,7 @@ CREATE TABLE `codigosqr_vcard` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 
@@ -120,6 +126,7 @@ CREATE TABLE `codigosqr_sms` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 
@@ -138,6 +145,7 @@ CREATE TABLE `codigosqr_geo` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );
 
@@ -156,5 +164,6 @@ CREATE TABLE `codigosqr_wifi` (
   `likes` int DEFAULT '0',
   `dislikes` int DEFAULT '0',
   `user_id` int unsigned DEFAULT NULL,
+  `tipo_qr` varchar(255) DEFAULT 'pdf',
   PRIMARY KEY (`id`)
 );

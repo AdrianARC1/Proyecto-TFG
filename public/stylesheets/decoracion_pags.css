@@ -1,0 +1,14 @@
+#principal .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+#principal #imagenes-fondo-abs #circulo3 {
+  z-index: 0;
+}
+#principal #imagenes-fondo-abs #circulo4 {
+  display: none;
+}
+#principal #imagenes-fondo-abs #cruz {
+  display: none;
+}/*# sourceMappingURL=decoracion_pags.css.map */

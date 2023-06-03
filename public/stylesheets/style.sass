@@ -2,9 +2,12 @@
     #imagenes-fondo-abs
         .imagenes-fondo
             position: absolute
+            background-repeat: repeat-y
         .cirulo-clase
             width: 400px
             z-index: 0
+            background-repeat: repeat-y
+
         #icono-qr
             transform: translate(-800px, 500px) rotate(-30deg)
             width: 60px
@@ -14,7 +17,8 @@
         #circulo
             right: 0
         #circulo2
-            left: 0
+            left: -170px
+            top: 200px
             transform: translate(-20%, -80%)
         #circulo3
             left: 0
@@ -103,6 +107,7 @@ header
             align-items: center
             width: 70%
             a
+                z-index: 2
                 color: #f2f2f2
                 .custom
                     @include botonCustom

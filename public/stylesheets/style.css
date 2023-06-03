@@ -52,6 +52,7 @@ header #links-header #bib-help {
   width: 70%;
 }
 header #links-header #bib-help a {
+  z-index: 2;
   color: #f2f2f2;
 }
 header #links-header #bib-help a .custom {
@@ -102,10 +103,12 @@ header a img {
 }
 #principal #imagenes-fondo-abs .imagenes-fondo {
   position: absolute;
+  background-repeat: repeat-y;
 }
 #principal #imagenes-fondo-abs .cirulo-clase {
   width: 400px;
   z-index: 0;
+  background-repeat: repeat-y;
 }
 #principal #imagenes-fondo-abs #icono-qr {
   transform: translate(-800px, 500px) rotate(-30deg);
@@ -119,7 +122,8 @@ header a img {
   right: 0;
 }
 #principal #imagenes-fondo-abs #circulo2 {
-  left: 0;
+  left: -170px;
+  top: 200px;
   transform: translate(-20%, -80%);
 }
 #principal #imagenes-fondo-abs #circulo3 {
