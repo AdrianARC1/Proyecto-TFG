@@ -41,7 +41,7 @@ module.exports={
           ) AS subconsulta 
           ORDER BY likes DESC
         `;
-        const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
+        const params = Array(9).fill(); // Crea un array de la id del usuario para cada consulta
 
         const [resul] = await pool.query(consulta, params)      
         res.render('biblioteca', {resul});
@@ -1168,7 +1168,7 @@ module.exports={
           ) AS subconsulta 
           ORDER BY likes DESC limit 20;
         `;
-        const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
+        const params = Array(9).fill(); // Crea un array de la id del usuario para cada consulta
 
         const [resul_masvotados] = await pool.query(consulta, params)
           res.render('codigosqr/masvotados', {resul_masvotados})
@@ -1198,7 +1198,7 @@ module.exports={
           ) AS subconsulta 
           ORDER BY fecha_creacion DESC limit 20;
                   `;
-                  const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
+                  const params = Array(9).fill(); // Crea un array de la id del usuario para cada consulta
           
                   const [resul_nuevosqr] = await pool.query(consulta, params)
           res.render('codigosqr/nuevosqr', {resul_nuevosqr})
