@@ -14,26 +14,77 @@
     <section id="principal-texto">
       
         <h1>Codigo QR para texto</h1>
-        <form action="/edit/:tabla/:id" method="post">
+        <form action="/edit/codigosqr_<%= newQR.qr_tipo %>/<%= newQR.id %>" method="post">
             <div class="texto-generar">
               <% if (newQR.qr_tipo === 'texto') { %>
                
                 <label for="data">Introduce el texto que quieras generar a codigo QR:</label>
-                <input type="text" name="data" id="data" required placeholder="Texto a generar">
+                <input type="text" name="data" id="data" value="<%= newQR.data %>" required placeholder="Texto a generar">
               
-                <% } else if (newQR.qr_tipo === 'sms') { %>
+                <% } else if (newQR.qr_tipo === 'tel') { %>
                 
                 <label for="telefono">Num telefono:</label>
-                <input type="text" name="telefono" id="telefono" required placeholder="Nombre de red">
+                <input type="tel" name="telefono" id="telefono" value="<%= newQR.telefono %>" required placeholder="Telefono">
+                
+                <% } else if (newQR.qr_tipo === 'url') { %>
+                
+                <label for="url">URL:</label>
+                <input type="url" name="url" id="url" value="<%= newQR.url %>" required placeholder="URL">
 
+                <% } else if (newQR.qr_tipo === 'redes') { %>
+                
+                <label for="perfilRed">Redes:</label>
+                <input type="redes" name="perfilRed" id="redes" value="<%= newQR.perfilRed %>" required placeholder="Redes">
+                
+                <% } else if (newQR.qr_tipo === 'pdf') { %>
+                
+                <label for="pdfUrl">PDF:</label>
+                <input type="url" name="pdfUrl" id="PDF" value="<%= newQR.pdfUrl %>" required placeholder="PDF">
+                
+                <% } else if (newQR.qr_tipo === 'sms') { %>
+                
+                <label for="numeroTel">Num telefono:</label>
+                <input type="tel" name="numeroTel" id="telefono" value="<%= newQR.numeroTel %>" required placeholder="Telefono">
+                
                 <label for="mensaje">Mensaje:</label>
-                <input type="text" name="mensaje" class="inputTextoVistas"  id="mensaje" required placeholder="Contraseña">
-<!-- 
-                <label for="encryption">Tipo de seguridad:</label>
-                <select name="encryption" id="encryption" required>
-                <option value="WPA">WPA</option>
-                <option value="WPA2">WPA2</option>
-                <option value="WEP">WEP</option> -->
+                <input type="tel" name="mensaje" value="<%= newQR.mensaje %>" required placeholder="Telefono">
+
+                <% } else if (newQR.qr_tipo === 'geo') { %>
+                
+                <label for="latitud">Latitud:</label>
+                <input type="text" name="latitud" value="<%= newQR.latitud %>" required placeholder="Latitud">
+                
+                <label for="longitud">Longitud:</label>
+                <input type="text" name="longitud" value="<%= newQR.longitud %>" required placeholder="Longitud">
+
+                <% } else if (newQR.qr_tipo === 'vcard') { %>
+                
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" name="nombre" value="<%= newQR.nombre %>" required placeholder="Nombre">
+        
+                  <label for="apellido">Apellido:</label>
+                  <input type="text" name="apellido" value="<%= newQR.apellido %>" class="inputTextoVistas"  id="password" required placeholder="Apellido">
+                  
+                  <label for="telefono">Telefono:</label>
+                  <input type="tel" name="telefono" class="inputTextoVistas"  id="password" value="<%= newQR.telefono %>" required placeholder="Telefono">
+                  
+                  <label for="correo">Correo:</label>
+                  <input type="email" name="correo" class="inputTextoVistas"  id="password" value="<%= newQR.correo %>" required placeholder="Correo">
+                
+                  <% } else if (newQR.qr_tipo === 'wifi') { %>
+                
+                    <label for="ssid">Nombre de red (SSID):</label>
+                    <input type="text" name="ssid" value="<%= newQR.ssid %>" required placeholder="Nombre de red">
+          
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" class="inputTextoVistas"  value="<%= newQR.password %>" required placeholder="Contraseña">
+          
+                    <label for="encryption">Tipo de seguridad:</label>
+                    <select name="encryption" id="encryption" required value="<%= newQR.encryption %>">
+                      <option value="WPA">WPA</option>
+                      <option value="WPA2">WPA2</option>
+                      <option value="WEP">WEP</option>
+                    </select>
 
               <% } %>
             </div>

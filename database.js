@@ -1,10 +1,3 @@
-// const mysql = require('mysql2/promise')
-// const { database } = require('./keys')
-
-// const pool = mysql.createPool(database)
-
-// module.exports=pool
-
 const mysql = require('mysql2/promise') // Requerimos mysql2 con promesas
 const { database_desarrollo, database_produccion } = require('./keys') // Exportamos los datos de las base de datos creadas en el archivo "keys"
 

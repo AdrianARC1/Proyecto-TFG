@@ -1,5 +1,5 @@
 // Paquetes y modulos requeridos
-const {getIndex, getQrCustom, getBiblioteca, getTusQR, getGenerateQR, getCodeUrl, postCodeUrl, getCodeTexto, postCodeTexto, getCodeWifi, postCodeWifi, getCodeTel, postCodeTel, getCodeGeo, postCodeGeo, getCodeSMS, postCodeSMS, getCodeRedes, postCodeRedes, getCodePDF, postCodePDF, getDeleteCode, getEditCode, postEditCode, getCodeDislikes, getCodeMasVotados, getCodeNuevos, getCodeDownload, getCodeLikes, getCodevCard} =require('../controllers/index.controller')
+const {getIndex, getQrCustom, getBiblioteca, getTusQR, getGenerateQR, getCodeUrl, postCodeUrl, getCodeTexto, postCodeTexto, getCodeWifi, postCodeWifi, getCodeTel, postCodeTel, getCodeGeo, postCodeGeo, getCodeSMS, postCodeSMS, getCodeRedes, postCodeRedes, getCodePDF, postCodePDF, getDeleteCode, getEditCode, postEditCode, postEditCodeSMS, postEditCodeGeo, postEditCodevCard, getCodeDislikes, getCodeMasVotados, getCodeNuevos, getCodeDownload, getCodeLikes, getCodevCard, postEditCodeWiFi, postEditCodeRedes, postEditCodeURL, postEditCodePDF, postEditCodeTexto, postEditCodeTel} =require('../controllers/index.controller')
 
 const express = require('express');
 const router = express.Router();
@@ -208,8 +208,27 @@ router.get('/delete/:tabla/:id', isLoggedIn, getDeleteCode)
 
 
 router.get('/edit/:tabla/:id', isLoggedIn, getEditCode)
-router.post('/edit/:tabla/:id', isLoggedIn, postEditCode);
 
+
+// router.post('/edit/:tabla/:id', isLoggedIn, postEditCode); // Contiene los tipos: texto, url, redes, pdf y telefono
+
+router.post('/edit/codigosqr_geo/:id', isLoggedIn, postEditCodeGeo);
+
+router.post('/edit/codigosqr_vcard/:id', isLoggedIn, postEditCodevCard);
+
+router.post('/edit/codigosqr_sms/:id', isLoggedIn, postEditCodeSMS);
+
+router.post('/edit/codigosqr_wifi/:id', isLoggedIn, postEditCodeWiFi);
+
+router.post('/edit/codigosqr_redes/:id', isLoggedIn, postEditCodeRedes);
+
+router.post('/edit/codigosqr_url/:id', isLoggedIn, postEditCodeURL);
+
+router.post('/edit/codigosqr_pdf/:id', isLoggedIn, postEditCodePDF);
+
+router.post('/edit/codigosqr_texto/:id', isLoggedIn, postEditCodeTexto);
+
+router.post('/edit/codigosqr_tel/:id', isLoggedIn, postEditCodeTel);
 
 //! ----------------------------------------------------------------- LIKES ----------------------------------------------------- //
 

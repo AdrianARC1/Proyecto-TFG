@@ -20,66 +20,85 @@
               <% if (codigos.length > 0) { %>
                 <% codigos.forEach(item => { %>
                   <div class="imagenes-like-dislke">
-                    <h1><%= item.id %></h1>
+                    <% if (item.qr_tipo === 'codigosqr_texto') { %>
+                      <h2>QR: Texto</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_wifi') { %>
+                      <h2>QR: WiFi</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_sms') { %>
+                      <h2>QR: SMS</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_tel') { %>
+                      <h2>QR: Tel</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_vcard') { %>
+                      <h2>QR: vCard</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_url') { %>
+                      <h2>QR: URL</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_geo') { %>
+                      <h2>QR: Geo</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_redes') { %>
+                      <h2>QR: Redes</h2>
+                    <% } else if (item.qr_tipo === 'codigosqr_pdf') { %>
+                      <h2>QR: PDF</h2>
+                    <% } %>
+
                     <img style="width: 200px;" src="<%= item.codigoqrURL %>"  alt="">
                     <div id="iconos">
 
-                      <% if (item.qr_tipo === 'codigosqr') { %>
-                      <a href="/delete/codigosqr/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar texto</a>
+                      <% if (item.qr_tipo === 'codigosqr_texto') { %>
+                      <a href="/delete/codigosqr_texto/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_wifi') { %>
-                      <a href="/delete/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar wifi</a>
+                      <a href="/delete/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_sms') { %>
-                      <a href="/delete/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar sms</a>
+                      <a href="/delete/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_tel') { %>
-                      <a href="/delete/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar tel</a>
+                      <a href="/delete/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_vcard') { %>
-                      <a href="/delete/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar vcard</a>
+                      <a href="/delete/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_url') { %>
-                      <a href="/delete/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar url</a>
+                      <a href="/delete/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_geo') { %>
-                      <a href="/delete/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar geo</a>
+                      <a href="/delete/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
                       
                     <% } else if (item.qr_tipo === 'codigosqr_redes') { %>
-                      <a href="/delete/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar redes</a>
+                      <a href="/delete/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
                     <% } else if (item.qr_tipo === 'codigosqr_pdf') { %>
-                      <a href="/delete/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar pdf</a>
+                      <a href="/delete/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar</a>
                     <% } %>
 
 
 
-                      <% if (item.qr_tipo === 'codigosqr') { %>
-                        <a href="/edit/codigosqr_texto/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar texto</a>
+                      <% if (item.qr_tipo === 'codigosqr_texto') { %>
+                        <a href="/edit/codigosqr_texto/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_wifi') { %>
-                        <a href="/edit/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar wifi</a>
+                        <a href="/edit/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_sms') { %>
-                        <a href="/edit/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar sms</a>
+                        <a href="/edit/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_tel') { %>
-                        <a href="/edit/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar tel</a>
+                        <a href="/edit/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_vcard') { %>
-                        <a href="/edit/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar vcard</a>
+                        <a href="/edit/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_url') { %>
-                        <a href="/edit/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar url</a>
+                        <a href="/edit/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_geo') { %>
-                        <a href="/edit/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar geo</a>
+                        <a href="/edit/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_redes') { %>
-                        <a href="/edit/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar redes</a>
+                        <a href="/edit/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
                       <% } else if (item.qr_tipo === 'codigosqr_pdf') { %>
-                        <a href="/edit/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar pdf</a>
+                        <a href="/edit/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
                         
                       <% } %>
                   </div>
