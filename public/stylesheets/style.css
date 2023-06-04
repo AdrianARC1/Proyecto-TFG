@@ -18,6 +18,22 @@
   border-radius: 10px;
 }
 
+#principal-texto h1 {
+  margin-bottom: 30px;
+}
+#principal-texto form .texto-generar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#principal-texto form .texto-generar label {
+  font-size: 20px;
+}
+#principal-texto form .texto-generar input {
+  width: 600px;
+  margin: 30px 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -55,6 +71,14 @@ header #links-header #bib-help a {
   z-index: 2;
   color: #f2f2f2;
 }
+header #links-header #bib-help a:hover {
+  transform: scale(1.04);
+  transition: 0.4s;
+}
+header #links-header #bib-help a:active {
+  transform: scale(0.98);
+  transition: 0.4s;
+}
 header #links-header #bib-help a .custom {
   color: #ffffff;
   background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
@@ -63,6 +87,9 @@ header #links-header #bib-help a .custom {
   box-shadow: rgb(0, 0, 0) 0 0 0 0;
   border-radius: 10px;
   transition: 1s;
+}
+header #links-header #bib-help a .custom:hover {
+  transform: scale(1);
 }
 header #links-header #bib-help a .custom:active {
   transform: scale(0.95);
@@ -179,6 +206,9 @@ header a img {
   transform: scale(0.95);
   transition: 0.4s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#principal #todos-codigosqr .div-codigosqr .imagenes-like-dislke h2 {
+  margin-bottom: 20px;
 }
 #principal #todos-codigosqr .div-codigosqr .imagenes-like-dislke #iconos {
   align-items: center;

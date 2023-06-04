@@ -22,8 +22,8 @@
                 <div class="imagenes-like-dislke">
                   <img draggable="false" src="<%= item.codigoqrURL %>"  alt="">
                   <div id="iconos">
-                    <a href="/like/<%= item.id %>"><i class="fa-regular fa-thumbs-up"></i><p><%= item.likes %></p></a>
-                    <a href="/dislike/<%= item.id %>"><i class="fa-regular fa-thumbs-down"></i><p><%= item.dislikes %></p></a>
+                    <a draggable="false" href="/like/<%= item.id %>"><i class="fa-regular fa-thumbs-up"></i><p><%= item.likes %></p></a>
+                    <a draggable="false" href="/dislike/<%= item.id %>"><i class="fa-regular fa-thumbs-down"></i><p><%= item.dislikes %></p></a>
                   </div>
                 </div>
                 <% }); %>

@@ -18,8 +18,32 @@ module.exports={
       },
 
       getBiblioteca:async(req, res, next)=> {
-        const [resul] = await pool.query('SELECT * FROM codigosqr_texto WHERE codigoqrURL IS NOT NULL;'); // Seleccionar todos los codigos qr de la tabla que no tengan el campo codigoqrURL null
-      
+        const consulta = `
+          SELECT id, codigoqrURL, likes, dislikes
+          FROM (
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_texto WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_geo WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_pdf WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_redes WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_sms WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_tel WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_url WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_vcard WHERE codigoqrURL IS NOT NULL
+              UNION ALL
+              SELECT id, codigoqrURL, likes, dislikes FROM codigosqr_wifi WHERE codigoqrURL IS NOT NULL
+          ) AS subconsulta 
+          ORDER BY likes DESC
+        `;
+        const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
+
+        const [resul] = await pool.query(consulta, params)      
         res.render('biblioteca', {resul});
       },
 
@@ -44,8 +68,7 @@ module.exports={
             SELECT codigoqrURL, 'codigosqr_vcard' AS qr_tipo, id, fecha_creacion FROM codigosqr_vcard WHERE user_id = ?
             UNION ALL
             SELECT codigoqrURL, 'codigosqr_wifi' AS qr_tipo, id, fecha_creacion FROM codigosqr_wifi WHERE user_id = ?
-        ) AS subconsulta 
-        ORDER BY fecha_creacion DESC
+        ) AS subconsulta ORDER BY fecha_creacion DESC
         `;
         const params = Array(9).fill(req.user.id); // Crea un array de la id del usuario para cada consulta
 

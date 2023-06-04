@@ -19,32 +19,32 @@
               <% if (newQR.qr_tipo === 'texto') { %>
                
                 <label for="data">Introduce el texto que quieras generar a codigo QR:</label>
-                <input type="text" name="data" id="data" value="<%= newQR.data %>" required placeholder="Texto a generar">
+                <input type="text" name="data" value="<%= newQR.data %>" required placeholder="Texto a generar">
               
                 <% } else if (newQR.qr_tipo === 'tel') { %>
                 
                 <label for="telefono">Num telefono:</label>
-                <input type="tel" name="telefono" id="telefono" value="<%= newQR.telefono %>" required placeholder="Telefono">
+                <input type="tel" name="telefono" value="<%= newQR.telefono %>" required placeholder="Telefono">
                 
                 <% } else if (newQR.qr_tipo === 'url') { %>
                 
                 <label for="url">URL:</label>
-                <input type="url" name="url" id="url" value="<%= newQR.url %>" required placeholder="URL">
+                <input type="url" name="url" value="<%= newQR.url %>" required placeholder="URL">
 
                 <% } else if (newQR.qr_tipo === 'redes') { %>
                 
                 <label for="perfilRed">Redes:</label>
-                <input type="redes" name="perfilRed" id="redes" value="<%= newQR.perfilRed %>" required placeholder="Redes">
+                <input type="text" name="perfilRed" value="<%= newQR.perfilRed %>" required placeholder="Redes">
                 
                 <% } else if (newQR.qr_tipo === 'pdf') { %>
                 
                 <label for="pdfUrl">PDF:</label>
-                <input type="url" name="pdfUrl" id="PDF" value="<%= newQR.pdfUrl %>" required placeholder="PDF">
+                <input type="url" name="pdfUrl" value="<%= newQR.pdfUrl %>" required placeholder="PDF">
                 
                 <% } else if (newQR.qr_tipo === 'sms') { %>
                 
                 <label for="numeroTel">Num telefono:</label>
-                <input type="tel" name="numeroTel" id="telefono" value="<%= newQR.numeroTel %>" required placeholder="Telefono">
+                <input type="tel" name="numeroTel" value="<%= newQR.numeroTel %>" required placeholder="Telefono">
                 
                 <label for="mensaje">Mensaje:</label>
                 <input type="tel" name="mensaje" value="<%= newQR.mensaje %>" required placeholder="Telefono">
@@ -66,10 +66,10 @@
                   <input type="text" name="apellido" value="<%= newQR.apellido %>" class="inputTextoVistas"  id="password" required placeholder="Apellido">
                   
                   <label for="telefono">Telefono:</label>
-                  <input type="tel" name="telefono" class="inputTextoVistas"  id="password" value="<%= newQR.telefono %>" required placeholder="Telefono">
+                  <input type="tel" name="telefono" class="inputTextoVistas" value="<%= newQR.telefono %>" required placeholder="Telefono">
                   
                   <label for="correo">Correo:</label>
-                  <input type="email" name="correo" class="inputTextoVistas"  id="password" value="<%= newQR.correo %>" required placeholder="Correo">
+                  <input type="email" name="correo" class="inputTextoVistas" value="<%= newQR.correo %>" required placeholder="Correo">
                 
                   <% } else if (newQR.qr_tipo === 'wifi') { %>
                 
@@ -80,7 +80,7 @@
                     <input type="password" name="password" class="inputTextoVistas"  value="<%= newQR.password %>" required placeholder="Contraseña">
           
                     <label for="encryption">Tipo de seguridad:</label>
-                    <select name="encryption" id="encryption" required value="<%= newQR.encryption %>">
+                    <select name="encryption" required value="<%= newQR.encryption %>">
                       <option value="WPA">WPA</option>
                       <option value="WPA2">WPA2</option>
                       <option value="WEP">WEP</option>
@@ -89,10 +89,10 @@
               <% } %>
             </div>
             <div id="anclas">
-              <a href="#div-formas">Formas</a>
-              <a href="#div-colores">Colores</a>
-              <a href="#div-logo">Logo</a>
-              <a href="#div-size">Tamaño</a>
+              <a draggable="false" href="#div-formas">Formas</a>
+              <a draggable="false" href="#div-colores">Colores</a>
+              <a draggable="false" href="#div-logo">Logo</a>
+              <a draggable="false" href="#div-size">Tamaño</a>
             </div>
            <div class="todas-opciones" id="div-formas">
             <h1>Formas</h1>

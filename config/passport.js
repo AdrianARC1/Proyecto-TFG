@@ -88,7 +88,7 @@ passport.use('local.signup', new LocalStrategy({
             </section>
             <footer style="background: #2c2c2c;padding-bottom: 40px;color: #f2f2f2;">
         <div id="imagen" style="width: 100%;display: flex;justify-content: center;align-items: center;">
-            <a href="/"><img draggable="false" src="/images/logo2.2.png" alt="" style="width: 200px;"></a>
+            <a draggable="false" href="/"><img draggable="false" src="/images/logo2.2.png" alt="" style="width: 200px;"></a>
         </div>
         <div id="links-footer" style="display: flex;justify-content: center;align-items: center;">
             <div style="width: 70%;display: flex;justify-content: space-evenly;">

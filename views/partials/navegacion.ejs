@@ -9,33 +9,33 @@
 </head>
 <body>
     <header>
-        <a href="/"><img draggable="false" src="/images/logo2.2.png" alt=""></a>
+        <a draggable="false" href="/"><img draggable="false" src="/images/logo2.2.png" alt=""></a>
         <% if (user) { %>
  
           <div id="links-header">
             <div id="bib-help">
-              <a href="/biblioteca">Biblioteca</a>
-              <a href="/masvotados">Tendencia</a>
-              <a href="/nuevosqr">Nuevos</a>
-              <a href="generate-qr"><button class="custom">Crear Code QR</button></a>
+              <a draggable="false" href="/biblioteca">Biblioteca</a>
+              <a draggable="false" href="/masvotados">Tendencia</a>
+              <a draggable="false" href="/nuevosqr">Nuevos</a>
+              <a draggable="false" href="/generate-qr"><button class="custom">Crear Code QR</button></a>
             </div>
             <div id="log-reg">
-              <a href="/tus-qr">Tus QR</a>
-              <a href="/logout">Logout</a>
+              <a draggable="false" href="/tus-qr">Tus QR</a>
+              <a draggable="false" href="/logout">Logout</a>
             </div>
           </div>
           <% } else { %>
            
           <div id="links-header">
             <div id="bib-help">
-              <a href="/biblioteca">Biblioteca</a>
-              <a href="/masvotados">Tendencia</a>
-              <a href="/nuevosqr">Nuevos</a>
-              <a href="/generate-qr"><button class="custom">Crear Code QR</button></a>
+              <a draggable="false" href="/biblioteca">Biblioteca</a>
+              <a draggable="false" href="/masvotados">Tendencia</a>
+              <a draggable="false" href="/nuevosqr">Nuevos</a>
+              <a draggable="false" href="/generate-qr"><button class="custom">Crear Code QR</button></a>
             </div>
             <div id="log-reg">
-              <a href="/signin" id="enlace-login">Login</a>
-              <a href="/signup">Registrarse</a>
+              <a draggable="false" href="/signin" id="enlace-login">Login</a>
+              <a draggable="false" href="/signup">Registrarse</a>
             </div>
           </div>
           <% } %>
