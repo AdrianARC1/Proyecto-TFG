@@ -21,12 +21,12 @@ passport.use('local.signin', new LocalStrategy({ //Crea una estrategia para sign
         const validPassword = encriptar.matchPassword(password, user.password) //Compara la contraseña con la contraseña encriptada
 
         if(validPassword) {
-            done(null, user, req.flash('success', 'Bienvenido ' + username)) // Llama a done para mostrar los mensajes corresponsientes
+            done(null, user, req.flash('success', 'Bienvenido ' + username)) // Llama a done para mostrar los mensajes correspondientes
         }else{
-            done(null,false,req.flash('message', 'Constraseña incorrecta')) // Llama a done para mostrar los mensajes corresponsientes
+            done(null,false,req.flash('message', 'Constraseña incorrecta')) // Llama a done para mostrar los mensajes correspondientes
         }
     }else{
-        return done(null,false,req.flash('message', 'Error al intentar acceder')) // Llama a done para mostrar los mensajes corresponsientes
+        return done(null,false,req.flash('message', 'Error al intentar acceder')) // Llama a done para mostrar los mensajes correspondientes
 
     }
 

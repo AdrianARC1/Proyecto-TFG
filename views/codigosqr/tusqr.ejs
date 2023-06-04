@@ -20,10 +20,68 @@
               <% if (codigos.length > 0) { %>
                 <% codigos.forEach(item => { %>
                   <div class="imagenes-like-dislke">
+                    <h1><%= item.id %></h1>
                     <img style="width: 200px;" src="<%= item.codigoqrURL %>"  alt="">
                     <div id="iconos">
-                      <a href="/delete/<%= item.id %>"><i class="fa-solid fa-trash"></i>Eliminar</a>
-                      <a href="/edit/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+
+                      <% if (item.qr_tipo === 'codigosqr') { %>
+                      <a href="/delete/codigosqr/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar texto</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_wifi') { %>
+                      <a href="/delete/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar wifi</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_sms') { %>
+                      <a href="/delete/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar sms</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_tel') { %>
+                      <a href="/delete/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar tel</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_vcard') { %>
+                      <a href="/delete/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar vcard</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_url') { %>
+                      <a href="/delete/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar url</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_geo') { %>
+                      <a href="/delete/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar geo</a>
+                      
+                    <% } else if (item.qr_tipo === 'codigosqr_redes') { %>
+                      <a href="/delete/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar redes</a>
+
+                    <% } else if (item.qr_tipo === 'codigosqr_pdf') { %>
+                      <a href="/delete/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-trash"></i> Eliminar pdf</a>
+                    <% } %>
+
+
+
+                      <% if (item.qr_tipo === 'codigosqr') { %>
+                        <a href="/edit/codigosqr_texto/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar texto</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_wifi') { %>
+                        <a href="/edit/codigosqr_wifi/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar wifi</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_sms') { %>
+                        <a href="/edit/codigosqr_sms/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar sms</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_tel') { %>
+                        <a href="/edit/codigosqr_tel/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar tel</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_vcard') { %>
+                        <a href="/edit/codigosqr_vcard/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar vcard</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_url') { %>
+                        <a href="/edit/codigosqr_url/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar url</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_geo') { %>
+                        <a href="/edit/codigosqr_geo/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar geo</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_redes') { %>
+                        <a href="/edit/codigosqr_redes/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar redes</a>
+
+                      <% } else if (item.qr_tipo === 'codigosqr_pdf') { %>
+                        <a href="/edit/codigosqr_pdf/<%= item.id %>"><i class="fa-solid fa-pen-to-square"></i> Editar pdf</a>
+                        
+                      <% } %>
                   </div>
                 </div>
                 <% }); %>

@@ -201,14 +201,14 @@ console.log(vCardContenido);
 //! ----------------------------------------------------------------- CRUD: Eliminar ----------------------------------------------------- //
 
 
-router.get('/delete/:id', isLoggedIn, getDeleteCode)
+router.get('/delete/:tabla/:id', isLoggedIn, getDeleteCode)
 
 
 //! ----------------------------------------------------------------- CRUD: EDITAR ----------------------------------------------------- //
 
 
-router.get('/edit/:id', isLoggedIn, getEditCode)
-router.post('/edit/:id', isLoggedIn, postEditCode);
+router.get('/edit/:tabla/:id', isLoggedIn, getEditCode)
+router.post('/edit/:tabla/:id', isLoggedIn, postEditCode);
 
 
 //! ----------------------------------------------------------------- LIKES ----------------------------------------------------- //

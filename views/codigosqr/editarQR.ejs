@@ -14,10 +14,28 @@
     <section id="principal-texto">
       
         <h1>Codigo QR para texto</h1>
-        <form action="/edit/<%= newQR.id %>" method="post">
+        <form action="/edit/:tabla/:id" method="post">
             <div class="texto-generar">
-              <label for="data">Introduce el texto que quieras generar a codigo QR:</label>
-              <input type="text" name="data" id="data" value="<%= newQR.data %>" required placeholder="Texto a generar">
+              <% if (newQR.qr_tipo === 'texto') { %>
+               
+                <label for="data">Introduce el texto que quieras generar a codigo QR:</label>
+                <input type="text" name="data" id="data" required placeholder="Texto a generar">
+              
+                <% } else if (newQR.qr_tipo === 'sms') { %>
+                
+                <label for="telefono">Num telefono:</label>
+                <input type="text" name="telefono" id="telefono" required placeholder="Nombre de red">
+
+                <label for="mensaje">Mensaje:</label>
+                <input type="text" name="mensaje" class="inputTextoVistas"  id="mensaje" required placeholder="Contraseña">
+<!-- 
+                <label for="encryption">Tipo de seguridad:</label>
+                <select name="encryption" id="encryption" required>
+                <option value="WPA">WPA</option>
+                <option value="WPA2">WPA2</option>
+                <option value="WEP">WEP</option> -->
+
+              <% } %>
             </div>
             <div id="anclas">
               <a href="#div-formas">Formas</a>
