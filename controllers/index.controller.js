@@ -18,6 +18,7 @@ module.exports={
       },
 
       getBiblioteca:async(req, res, next)=> {
+          // Recoge todos los codigos qr con sus likes y dislikes
         const consulta = `
           SELECT id, codigoqrURL, likes, dislikes
           FROM (
@@ -48,6 +49,7 @@ module.exports={
       },
 
       getTusQR:async(req, res, next)=> {
+        // Recoge todos los qr que pertenezcan a la id del usuario
         const consulta = `
         SELECT codigoqrURL, qr_tipo, id
         FROM (
@@ -1145,6 +1147,7 @@ module.exports={
         },
 
         getCodeMasVotados:async (req, res, next)=>{
+          // Recoge todos los codigos qr con mas likes forma descendente
           const consulta = `
           SELECT id, codigoqrURL, likes, dislikes
           FROM (
@@ -1175,6 +1178,7 @@ module.exports={
         },
 
         getCodeNuevos:async (req, res, next)=>{
+          // Recoge todos los codigos qr de forma descendente
           const consulta = `
           SELECT id, codigoqrURL, fecha_creacion
           FROM (
